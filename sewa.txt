@@ -1,0 +1,9 @@
+Required Load: 50 KW (62.5 KVA)
+Formula : KW / 0.8 = KVA
+
+989_ 01. SEWA Declaration & Commitment Form
+
+
+English Font = Times New Roman
+Arabic Font =  Sakkal Majalla, Courier New, 
+
