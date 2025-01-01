@@ -24,23 +24,42 @@
               <tr>
                 <td id="td1">Owner Name:</td>
                 <td id="td2" class="font">
-                  <div style="position: relative; display: inline-block;">
+                  <div style="position: relative; display: inline-block">
                     <select id="title-select">
                       <option style="font-weight: 700" value="MR.">MR.</option>
-                      <option style="font-weight: 700" value="MRS.">MRS.</option>
-                      <option style="font-weight: 700" value="MISS.">MISS.</option>
+                      <option style="font-weight: 700" value="MRS.">
+                        MRS.
+                      </option>
+                      <option style="font-weight: 700" value="MISS.">
+                        MISS.
+                      </option>
                       <option style="font-weight: 700" value="MS.">MS.</option>
                     </select>
-                    <input type="text" id="name-input" placeholder="Enter Name" />
+                    <input
+                      type="text"
+                      id="name-input"
+                      placeholder="Enter Name" />
                     <button id="clear-button">✖</button>
                   </div>
                 </td>
-                
+
                 <td id="td3" class="arabic td11">اسم المالك:</td>
               </tr>
               <tr>
                 <td>Area:</td>
-                <td class="font">Al Sajaa, Al Saniyya</td>
+                <td class="font">
+                  <div style="position: relative; width: 200px">
+                    <input
+                      type="text"
+                      id="area-search"
+                      placeholder="Search area..."
+                      style="width: 100%" />
+                    <select
+                      id="area-select"
+                      size="10"
+                      style="width: 100%; position: absolute"></select>
+                  </div>
+                </td>
                 <td class="arabic td11">المنطقة:</td>
               </tr>
               <tr>
