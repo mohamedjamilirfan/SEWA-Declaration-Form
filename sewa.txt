@@ -7,3 +7,4 @@ Formula : KW / 0.8 = KVA
 English Font = Times New Roman
 Arabic Font =  Sakkal Majalla, Courier New, 
 
+clear button once click button display none again user enter character on input clear button will show display block

@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SEWA Declaration & Commitment Form</title>
-    <link rel="icon" href="Images/s.jpg" type="image/png" />
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -47,13 +46,14 @@
               </tr>
               <tr>
                 <td>Area:</td>
-                <td class="font">
+                <td id="td44" class="font">
                   <div style="position: relative; width: 200px">
                     <input
                       type="text"
                       id="area-search"
-                      placeholder="Search area..."
+                      placeholder="Search Area..."
                       style="width: 100%" />
+                    <button id="clear-button1">✖</button>
                     <select
                       id="area-select"
                       size="10"
@@ -64,19 +64,47 @@
               </tr>
               <tr>
                 <td>Plot No.:</td>
-                <td class="font">989 Minha</td>
+                <td id="td45" class="font">
+                  <div style="position: relative; display: inline-block">
+                    <input
+                      type="text"
+                      id="plotNo-input"
+                      placeholder="Enter Plot Number" />
+                    <button id="clear-button2">✖</button>
+                  </div>
+                </td>
                 <td class="arabic td11">رقم الأرض:</td>
               </tr>
               <tr>
                 <td>Project description:</td>
-                <td class="font">
-                  Proposed Open Shed + Service Block(G) + B/ Wall
+                <td id="td46" class="font">
+                  <div style="position: relative; display: inline-block">
+                    <input
+                      type="text"
+                      id="project-input"
+                      placeholder="Enter Project Description" />
+                    <button id="clear-button3">✖</button>
+                  </div>
                 </td>
                 <td class="arabic td11">وصف المشروع:</td>
               </tr>
               <tr>
                 <td>Required load:</td>
-                <td class="font">-</td>
+                <td id="td47" class="font">
+                  <div
+                    style="
+                      position: relative;
+                      display: inline-block;
+                      width: 40%;
+                    ">
+                    <input
+                      type="number"
+                      id="load-input"
+                      placeholder="Enter Load" />
+                    <button id="clear-button4">✖</button>
+                  </div>
+                  <span id="kw">KW</span>
+                </td>
                 <td class="arabic td11">الحمولة المطلوبة:</td>
               </tr>
               <tr>

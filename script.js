@@ -4,7 +4,23 @@ document
     // Get the entered name
     const nameInput = document.getElementById('name-input');
     const titleSelect = document.getElementById('title-select');
+    const areaSearch = document.getElementById('area-search');
+    const areaSelect = document.getElementById('area-select');
+    const plotnoInput = document.getElementById('plotNo-input');
+    const projectInput = document.getElementById('project-input');
+    const td47 = document.getElementById('td47');
+    const loadInput = document.getElementById('load-input');
+    const kw = document.getElementById('kw');
+    const kvaSpan = document.getElementById('kva-span');
+    
+
+    // Get the entered name
     const nameValue = titleSelect.value + ' ' + nameInput.value;
+    const areaValue = areaSearch.value;
+    const plotnoValue = plotnoInput.value;
+    const projectValue = projectInput.value;
+    const loadValue = loadInput.value + ' ' + kw.textContent + ' ' + kvaSpan.textContent;
+    
 
     // if (nameInput.value.trim() === '') {
     //   alert('Please enter a name before downloading the PDF.');
@@ -14,8 +30,24 @@ document
     // Display the entered name on the page
     const td2 = document.getElementById('td2');
     td2.textContent = nameValue; // Replace input with name text
+
+    const td44 = document.getElementById('td44');
+    td44.textContent = areaValue; // Replace input with name text
+
+    const td45 = document.getElementById('td45');
+    td45.textContent = plotnoValue; // Replace input with name text
+
+    const td46 = document.getElementById('td46');
+    td46.textContent = projectValue; // Replace input with name text
+
+    td47.textContent = loadValue; // Replace input with name text
+
     nameInput.style.display = 'none'; // Hide the input field
     titleSelect.style.display = 'none'; // Hide the dropdown
+    areaSearch.style.display = 'none'; // Hide the area-search input box
+    areaSelect.style.display = 'none'; // Hide the area-select dropdown
+    plotnoInput.style.display = 'none'; // Hide the area-search input box
+    projectInput.style.display = 'none'; // Hide the area-search input box
 
     // Dynamically import jsPDF
     const { jsPDF } = window.jspdf;
@@ -27,35 +59,35 @@ document
     // Apply a border to all table and td elements
     document.querySelectorAll('table').forEach((element) => {
       element.style.border = 'none';
-      element.style.borderLeft = '0.5px solid black';
+      element.style.borderLeft = '0.3px solid black';
     });
 
     // Apply top and right borders only to all <th> elements
     document.querySelectorAll('th').forEach((th) => {
       th.style.border = 'none'; // Clear existing borders
-      th.style.borderTop = '0.5px solid black';
-      th.style.borderRight = '0.5px solid black'; // Add right border
+      th.style.borderTop = '0.3px solid black';
+      th.style.borderRight = '0.3px solid black'; // Add right border
     });
 
     // Apply top and right borders only to all <td> elements
     document.querySelectorAll('td').forEach((td) => {
       td.style.border = 'none'; // Clear existing borders
-      td.style.borderTop = '0.5px solid black'; // Add top border
-      td.style.borderRight = '0.5px solid black'; // Add right border
+      td.style.borderTop = '0.3px solid black'; // Add top border
+      td.style.borderRight = '0.3px solid black'; // Add right border
     });
 
     // Apply top and right borders only to all <td> elements
     document.querySelectorAll('#table2').forEach((table2) => {
       table2.style.border = 'none'; // Clear existing borders
-      table2.style.borderLeft = '0.5px solid black'; // Add top border
-      table2.style.borderBottom = '0.5px solid black';
+      table2.style.borderLeft = '0.3px solid black'; // Add top border
+      table2.style.borderBottom = '0.3px solid black';
     });
 
     // Apply top and right borders only to all <td> elements
     document.querySelectorAll('#table3').forEach((table3) => {
       table3.style.border = 'none'; // Clear existing borders
-      table3.style.borderLeft = '0.5px solid black'; // Add top border
-      table3.style.borderBottom = '0.5px solid black';
+      table3.style.borderLeft = '0.3px solid black'; // Add top border
+      table3.style.borderBottom = '0.3px solid black';
     });
 
     // Apply top and right borders only to all <td> elements
@@ -67,14 +99,14 @@ document
     // Apply top and right borders only to all <td> elements
     document.querySelectorAll('#terms').forEach((terms) => {
       terms.style.textDecoration = 'none';
-      terms.style.borderBottom = '0.5px solid black';
+      terms.style.borderBottom = '0.3px solid black';
       terms.style.paddingBottom = '1px';
     });
 
     // Apply top and right borders only to all <td> elements
     document.querySelectorAll('#terms1').forEach((terms1) => {
       terms1.style.textDecoration = 'none';
-      terms1.style.borderBottom = '0.5px solid black';
+      terms1.style.borderBottom = '0.3px solid black';
       terms1.style.paddingBottom = '0px';
     });
 
@@ -121,6 +153,44 @@ document
     event.preventDefault(); // Prevent any unexpected behavior
   });
 
+document
+  .getElementById('clear-button1')
+  .addEventListener('click', function (event) {
+    const areaSearch = document.getElementById('area-search');
+    areaSearch.value = ''; // Clear the input value
+    areaSearch.focus(); // Optionally refocus the input field
+    event.preventDefault(); // Prevent any unexpected behavior
+  });
+
+document
+  .getElementById('clear-button2')
+  .addEventListener('click', function (event) {
+    const plotnoInput = document.getElementById('plotNo-input');
+    plotnoInput.value = ''; // Clear the input value
+    plotnoInput.focus(); // Optionally refocus the input field
+    event.preventDefault(); // Prevent any unexpected behavior
+    // document.getElementById('clear-button2').style.display = 'none'
+  });
+
+document
+  .getElementById('clear-button3')
+  .addEventListener('click', function (event) {
+    const projectInput = document.getElementById('project-input');
+    projectInput.value = ''; // Clear the input value
+    projectInput.focus(); // Optionally refocus the input field
+    event.preventDefault(); // Prevent any unexpected behavior
+    // document.getElementById('clear-button2').style.display = 'none'
+  });
+
+document
+  .getElementById('clear-button4')
+  .addEventListener('click', function (event) {
+    const loadInput = document.getElementById('load-input');
+    loadInput.value = ''; // Clear the input value
+    loadInput.focus(); // Optionally refocus the input field
+    event.preventDefault(); // Prevent any unexpected behavior
+    // document.getElementById('clear-button2').style.display = 'none'
+  });
 // Full list of 404 areas
 const areas = [
   'Ad Dafain',
@@ -535,8 +605,10 @@ const areas = [
 const areaSelect = document.getElementById('area-select');
 const areaSearch = document.getElementById('area-search');
 
-// Initially hide the dropdown
-areaSelect.style.display = 'none';
+// Function to hide the dropdown
+function hideAreaSelect() {
+  areaSelect.style.display = 'none';
+}
 
 // Add event listener for search input
 areaSearch.addEventListener('input', (event) => {
@@ -546,6 +618,11 @@ areaSearch.addEventListener('input', (event) => {
   if (searchValue) {
     areaSelect.style.display = 'block';
     areaSelect.innerHTML = ''; // Clear current options
+
+    // Populate dropdown with filtered results
+    const filteredAreas = areas.filter((area) =>
+      area.toLowerCase().includes(searchValue)
+    );
 
     // Separate matches starting with the query
     const startsWithMatches = areas.filter((area) =>
@@ -575,16 +652,71 @@ areaSearch.addEventListener('input', (event) => {
       option.textContent = filteredArea;
       areaSelect.appendChild(option);
     });
+    filteredAreas.forEach((filteredArea) => {
+      const option = document.createElement('option');
+      option.value = filteredArea;
+      option.textContent = filteredArea;
+      areaSelect.appendChild(option);
+    });
   } else {
-    areaSelect.style.display = 'none';
+    hideAreaSelect();
   }
 });
 
-// Add event listener for dropdown selection
+// Event listener for blur (losing focus) from input or clicking elsewhere
+document.addEventListener('click', (event) => {
+  const isClickInside =
+    areaSearch.contains(event.target) || areaSelect.contains(event.target);
+  if (!isClickInside) {
+    hideAreaSelect(); // Hide dropdown if clicked outside
+  }
+});
+
+// Event listener for dropdown selection
 areaSelect.addEventListener('change', () => {
   const selectedValue = areaSelect.value;
   if (selectedValue) {
-    areaSearch.value = selectedValue; // Display selected option in input
-    areaSelect.style.display = 'none'; // Hide the dropdown
+    areaSearch.value = selectedValue; // Set selected value in input
+    hideAreaSelect(); // Hide the dropdown
   }
+});
+
+// Update the KVA calculation when the input value changes
+document.getElementById('load-input').addEventListener('input', function () {
+  const loadInput = document.getElementById('load-input');
+  const td47 = document.getElementById('td47');
+
+  // Check if the span element already exists
+  let kvaSpan = document.getElementById('kva-span');
+  if (!kvaSpan) {
+      // Create a new span if it doesn't exist
+      kvaSpan = document.createElement('span');
+      kvaSpan.id = 'kva-span';
+      td47.appendChild(kvaSpan);
+  }
+
+  // Update the span's content and make it visible
+  const loadValue = parseFloat(loadInput.value);
+  if (!isNaN(loadValue)) {
+      kvaSpan.textContent = `(${(loadValue / 0.8).toFixed(2)} KVA)`;
+      kvaSpan.style.display = 'inline'; // Ensure it's visible
+  } else {
+      kvaSpan.textContent = '';
+  }
+});
+
+// Clear button behavior
+document.getElementById('clear-button4').addEventListener('click', function () {
+  const loadInput = document.getElementById('load-input');
+  const kvaSpan = document.getElementById('kva-span');
+
+  // Clear the input value
+  loadInput.value = '';
+
+  // Hide the span if it exists
+  if (kvaSpan) {
+      kvaSpan.style.display = 'none';
+  }
+
+  loadInput.focus(); // Optionally refocus the input field
 });
