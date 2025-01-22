@@ -140,14 +140,15 @@ main {
   border-radius: 2px;
 }
 
-#plotNo-input {
+#plotNo-input,
+#plotNo1-input {
   border: none;
   outline: none;
   border: 0.5px solid black;
   font-family: EnglishRegular;
   font-weight: 500;
   font-size: 9px;
-  width: 300px;
+  width: 100px;
   padding: 1px 1px 1px 3px;
   border-radius: 2px;
 }
@@ -198,17 +199,16 @@ main {
 }
 
 /* Hide spinners in Chrome, Edge, and Safari */
-input[type="number"]::-webkit-inner-spin-button,
-input[type="number"]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 /* Additional optional styling for consistent look */
-input[type="number"] {
-    appearance: none;
+input[type='number'] {
+  appearance: none;
 }
-
 
 #name-input[style='display:none'],
 #title-select[style='display:none'] {
@@ -224,7 +224,8 @@ input[type="number"] {
 #clear-button1,
 #clear-button2,
 #clear-button3,
-#clear-button4 {
+#clear-button4,
+#clear-button5 {
   font-size: 8px;
   color: black;
   border: none;

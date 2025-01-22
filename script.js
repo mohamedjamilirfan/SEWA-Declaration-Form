@@ -7,20 +7,35 @@ document
     const areaSearch = document.getElementById('area-search');
     const areaSelect = document.getElementById('area-select');
     const plotnoInput = document.getElementById('plotNo-input');
+    const plotno1Input = document.getElementById('plotNo1-input');
+    const mulk = document.getElementById('mulk');
+    const minha = document.getElementById('minha');
     const projectInput = document.getElementById('project-input');
     const td47 = document.getElementById('td47');
     const loadInput = document.getElementById('load-input');
     const kw = document.getElementById('kw');
     const kvaSpan = document.getElementById('kva-span');
-    
+    const clearButton5 = document.getElementById('clear-button5');
+
+    // Hide elements if conditions are met
+    if (plotno1Input.value.trim() === '') {
+      plotno1Input.style.display = 'none';
+      clearButton5.style.display = 'none';
+      mulk.textContent = '';
+    } else {
+      plotno1Input.style.display = 'inline-block';
+      clearButton5.style.display = 'inline-block';
+      mulk.style.display = 'inline-block';
+    }
 
     // Get the entered name
     const nameValue = titleSelect.value + ' ' + nameInput.value;
     const areaValue = areaSearch.value;
     const plotnoValue = plotnoInput.value;
+    const plotno1Value = plotno1Input.value;
     const projectValue = projectInput.value;
-    const loadValue = loadInput.value + ' ' + kw.textContent + ' ' + kvaSpan.textContent;
-    
+    const loadValue =
+      loadInput.value + ' ' + kw.textContent + ' ' + kvaSpan.textContent;
 
     // if (nameInput.value.trim() === '') {
     //   alert('Please enter a name before downloading the PDF.');
@@ -35,7 +50,14 @@ document
     td44.textContent = areaValue; // Replace input with name text
 
     const td45 = document.getElementById('td45');
-    td45.textContent = plotnoValue; // Replace input with name text
+    td45.textContent =
+      plotnoValue +
+      ' ' +
+      minha.textContent +
+      ' ' +
+      plotno1Value +
+      ' ' +
+      mulk.textContent; // Replace input with name text
 
     const td46 = document.getElementById('td46');
     td46.textContent = projectValue; // Replace input with name text
@@ -47,6 +69,7 @@ document
     areaSearch.style.display = 'none'; // Hide the area-search input box
     areaSelect.style.display = 'none'; // Hide the area-select dropdown
     plotnoInput.style.display = 'none'; // Hide the area-search input box
+    plotno1Input.style.display = 'none'; // Hide the area-search input box
     projectInput.style.display = 'none'; // Hide the area-search input box
 
     // Dynamically import jsPDF
@@ -188,6 +211,16 @@ document
     const loadInput = document.getElementById('load-input');
     loadInput.value = ''; // Clear the input value
     loadInput.focus(); // Optionally refocus the input field
+    event.preventDefault(); // Prevent any unexpected behavior
+    // document.getElementById('clear-button2').style.display = 'none'
+  });
+
+document
+  .getElementById('clear-button5')
+  .addEventListener('click', function (event) {
+    const plotno1Input = document.getElementById('plotNo1-input');
+    plotno1Input.value = ''; // Clear the input value
+    plotno1Input.focus(); // Optionally refocus the input field
     event.preventDefault(); // Prevent any unexpected behavior
     // document.getElementById('clear-button2').style.display = 'none'
   });
@@ -689,19 +722,19 @@ document.getElementById('load-input').addEventListener('input', function () {
   // Check if the span element already exists
   let kvaSpan = document.getElementById('kva-span');
   if (!kvaSpan) {
-      // Create a new span if it doesn't exist
-      kvaSpan = document.createElement('span');
-      kvaSpan.id = 'kva-span';
-      td47.appendChild(kvaSpan);
+    // Create a new span if it doesn't exist
+    kvaSpan = document.createElement('span');
+    kvaSpan.id = 'kva-span';
+    td47.appendChild(kvaSpan);
   }
 
   // Update the span's content and make it visible
   const loadValue = parseFloat(loadInput.value);
   if (!isNaN(loadValue)) {
-      kvaSpan.textContent = `(${(loadValue / 0.8).toFixed(2)} KVA)`;
-      kvaSpan.style.display = 'inline'; // Ensure it's visible
+    kvaSpan.textContent = `(${(loadValue / 0.8).toFixed(2)} KVA)`;
+    kvaSpan.style.display = 'inline'; // Ensure it's visible
   } else {
-      kvaSpan.textContent = '';
+    kvaSpan.textContent = '';
   }
 });
 
@@ -715,8 +748,79 @@ document.getElementById('clear-button4').addEventListener('click', function () {
 
   // Hide the span if it exists
   if (kvaSpan) {
-      kvaSpan.style.display = 'none';
+    kvaSpan.style.display = 'none';
   }
 
   loadInput.focus(); // Optionally refocus the input field
 });
+
+function capitalizeWords(input) {
+  return input.toLowerCase().replace(/\b\w/g, (match) => match.toUpperCase());
+}
+
+// Apply capitalization to specific input fields
+document.querySelectorAll('input[type="text"]').forEach((inputField) => {
+  inputField.addEventListener('input', (event) => {
+    const currentValue = event.target.value;
+    event.target.value = capitalizeWords(currentValue);
+  });
+});
+
+// Create the toggle button
+const toggleButton = document.createElement('button');
+toggleButton.textContent = 'R';
+toggleButton.style.padding = '1px 2.5px';
+toggleButton.style.border = '1px solid #ccc';
+toggleButton.style.borderRadius = '7px';
+toggleButton.style.backgroundColor = '#ddd';
+toggleButton.style.cursor = 'pointer';
+toggleButton.style.transition = 'all 0.3s';
+toggleButton.style.fontSize = '8px';
+toggleButton.style.float = 'right';
+
+// Get the td47 element and its first child (kva-span)
+const td47 = document.getElementById('td47');
+let kvaSpan = document.getElementById('kva-span');
+const loadInput = document.getElementById('load-input');
+const kw = document.getElementById('kw');
+
+// Ensure kva-span exists; if not, create it dynamically
+if (!kvaSpan) {
+  kvaSpan = document.createElement('span');
+  kvaSpan.id = 'kva-span';
+  td47.appendChild(kvaSpan);
+}
+
+// Insert the toggle button as the second child
+td47.insertBefore(toggleButton, kvaSpan.nextSibling);
+
+// Add click event listener to the toggle button
+toggleButton.addEventListener('click', () => {
+  const isBold = td47.style.fontWeight === '600';
+  td47.style.fontWeight = isBold ? 'normal' : '600';
+  loadInput.style.letterSpacing = isBold ? '0px' : '0.6px';
+  kvaSpan.style.letterSpacing = isBold ? '0px' : '0.6px';
+  kw.style.letterSpacing = isBold ? '0px' : '0.6px';
+  toggleButton.textContent = isBold ? 'R' : 'B';
+  toggleButton.style.backgroundColor = isBold ? '#ddd' : '#ddd';
+  toggleButton.style.color = isBold ? '#000' : '#000';
+});
+
+// // Ensure the PDF hides the elements dynamically
+// document.getElementById('download-pdf').addEventListener('click', () => {
+//   const plotNo1Input = document.getElementById('plotNo1-input');
+//   const clearButton5 = document.getElementById('clear-button5');
+//   const mulk = document.getElementById('mulk');
+
+//   // Hide elements if conditions are met
+//   if (plotNo1Input.value.trim() === '') {
+//     plotNo1Input.style.display = 'none';
+//     clearButton5.style.display = 'none';
+//     mulk.style.display = 'none';
+//   }
+//   else {
+//     plotNo1Input.style.display = 'inline-block';
+//     clearButton5.style.display = 'inline-block';
+//     mulk.style.display = 'inline-block';
+//   }
+// });
