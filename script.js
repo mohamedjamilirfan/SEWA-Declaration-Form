@@ -11,7 +11,18 @@ document
     const mulk = document.getElementById('mulk');
     const minha = document.getElementById('minha');
     const projectInput = document.getElementById('project-input');
+    const partiesInput = document.getElementById('parties-input');
+    const consultantInput = document.getElementById('consultant-input');
+    const contractorInput = document.getElementById('contractor-input');
+    const elecContractorInput = document.getElementById(
+      'elec-contractor-input'
+    );
+    const td46 = document.getElementById('td46');
     const td47 = document.getElementById('td47');
+    const td50 = document.getElementById('td50');
+    const td51 = document.getElementById('td51');
+    const td52 = document.getElementById('td52');
+    const td53 = document.getElementById('td53');
     const loadInput = document.getElementById('load-input');
     const kw = document.getElementById('kw');
     const kvaSpan = document.getElementById('kva-span');
@@ -33,18 +44,14 @@ document
     const areaValue = areaSearch.value;
     const plotnoValue = plotnoInput.value;
     const plotno1Value = plotno1Input.value;
-    const projectValue = projectInput.value;
     const loadValue =
       loadInput.value + ' ' + kw.textContent + ' ' + kvaSpan.textContent;
-
-    // if (nameInput.value.trim() === '') {
-    //   alert('Please enter a name before downloading the PDF.');
-    //   return;
-    // }
 
     // Display the entered name on the page
     const td2 = document.getElementById('td2');
     td2.textContent = nameValue; // Replace input with name text
+    td2.style.width = '346px'
+    td2.style.wordWrap = 'break-word';
 
     const td44 = document.getElementById('td44');
     td44.textContent = areaValue; // Replace input with name text
@@ -58,11 +65,40 @@ document
       plotno1Value +
       ' ' +
       mulk.textContent; // Replace input with name text
+    td45.style.width = '346px'
+    td45.style.wordWrap = 'break-word';
 
-    const td46 = document.getElementById('td46');
-    td46.textContent = projectValue; // Replace input with name text
+    // Ensure font size adjustments are applied
+    const adjustedFontSize = window.getComputedStyle(projectInput).fontSize;
+    td46.textContent = projectInput.value; // Set the value in the table cell
+    td46.style.fontSize = adjustedFontSize; // Apply the adjusted font size
+    td46.style.width = '346px'
+    td46.style.wordWrap = 'break-word';
 
     td47.textContent = loadValue; // Replace input with name text
+    td47.style.width = '346px'
+    td47.style.wordWrap = 'break-word';
+
+    const adjustedFontSize1 = window.getComputedStyle(partiesInput).fontSize;
+    td50.textContent = partiesInput.value; // Set the value in the table cell
+    td50.style.fontSize = adjustedFontSize1; // Apply the adjusted font size
+    td50.style.width = '346px'
+
+    const adjustedFontSize2 = window.getComputedStyle(consultantInput).fontSize;
+    td51.textContent = consultantInput.value; // Set the value in the table cell
+    td51.style.fontSize = adjustedFontSize2; // Apply the adjusted font size
+    td51.style.width = '346px'
+
+    const adjustedFontSize3 = window.getComputedStyle(contractorInput).fontSize;
+    td52.textContent = contractorInput.value; // Set the value in the table cell
+    td52.style.fontSize = adjustedFontSize3; // Apply the adjusted font size
+    td52.style.width = '346px'
+
+    const adjustedFontSize4 =
+      window.getComputedStyle(elecContractorInput).fontSize;
+    td53.textContent = elecContractorInput.value; // Set the value in the table cell
+    td53.style.fontSize = adjustedFontSize4; // Apply the adjusted font size
+    td53.style.width = '346px'
 
     nameInput.style.display = 'none'; // Hide the input field
     titleSelect.style.display = 'none'; // Hide the dropdown
@@ -71,6 +107,52 @@ document
     plotnoInput.style.display = 'none'; // Hide the area-search input box
     plotno1Input.style.display = 'none'; // Hide the area-search input box
     projectInput.style.display = 'none'; // Hide the area-search input box
+    partiesInput.style.display = 'none'; // Hide the area-search input box
+    consultantInput.style.display = 'none'; // Hide the area-search input box
+    contractorInput.style.display = 'none'; // Hide the area-search input box
+    elecContractorInput.style.display = 'none'; // Hide the area-search input box
+
+    // Define the specific td elements to modify
+  const specificTdIds = ['td2', 'td44', 'td45', 'td46', 'td47', 'td4', 'td50', 'td51', 'td52', 'td53'];
+
+  // Apply styles to center-align and set fixed width
+  specificTdIds.forEach((id) => {
+    const tdElement = document.getElementById(id);
+    if (tdElement) {
+      tdElement.style.position = 'center'; // Center-align text
+      tdElement.style.width = '315px'; // Set fixed width
+      tdElement.style.wordBreak = 'break-word'; // Enable text wrapping
+      tdElement.style.overflow = 'hidden'; // Hide overflowing text
+    }
+  });
+  
+  // Define the specific td elements to modify
+const specificTdIds1 = ['td3', 'td11', 'td12', 'td13', 'td14', 'td15', 'td16', 'td17', 'td18', 'td79'];
+
+// Apply styles to center-align and set fixed width
+specificTdIds1.forEach((id) => {
+  const tdElement1 = document.getElementById(id);
+  if (tdElement1) {
+    // tdElement1.style.position = 'center'; // Center-align text
+    tdElement1.style.width = '105px'; // Set fixed width
+    // tdElement1.style.wordBreak = 'break-word'; // Enable text wrapping
+    // tdElement1.style.overflow = 'hidden'; // Hide overflowing text
+  }
+});
+
+// Define the specific td elements to modify
+const specificTdIds2 = ['td31', 'td32', 'td33', 'td99', 'td34', 'td5', 'td35', 'td36', 'td37', 'td38'];
+
+// Apply styles to center-align and set fixed width
+specificTdIds2.forEach((id) => {
+  const tdElement2 = document.getElementById(id);
+  if (tdElement2) {
+    // tdElement2.style.position = 'center'; // Center-align text
+    tdElement2.style.width = '115px'; // Set fixed width
+    // tdElement2.style.wordBreak = 'break-word'; // Enable text wrapping
+    // tdElement2.style.overflow = 'hidden'; // Hide overflowing text
+  }
+});
 
     // Dynamically import jsPDF
     const { jsPDF } = window.jspdf;
@@ -116,7 +198,7 @@ document
     // Apply top and right borders only to all <td> elements
     document.querySelectorAll('#line1, #line2').forEach((line) => {
       line.style.border = 'none'; // Clear existing borders
-      line.style.borderBottom = '0.1px solid #a09d9d';
+      line.style.borderBottom = '0.01px solid #a09d9d';
     });
 
     // Apply top and right borders only to all <td> elements
@@ -161,7 +243,9 @@ document
     pdf.addImage(imgData2, 'JPEG', 0, 0, pageWidth, pageHeight);
 
     // Save the PDF
-    pdf.save('Document.pdf');
+    const save = plotnoValue + '_01.' + ' ' + 'SEWA Declaration & Commitment Form';
+    
+    pdf.save(save + '.pdf');
 
     // Add page refresh
     location.reload();
@@ -201,6 +285,7 @@ document
     const projectInput = document.getElementById('project-input');
     projectInput.value = ''; // Clear the input value
     projectInput.focus(); // Optionally refocus the input field
+    projectInput.style.fontSize = '9px'; // Reset to the default font size as per the CSS
     event.preventDefault(); // Prevent any unexpected behavior
     // document.getElementById('clear-button2').style.display = 'none'
   });
@@ -224,6 +309,51 @@ document
     event.preventDefault(); // Prevent any unexpected behavior
     // document.getElementById('clear-button2').style.display = 'none'
   });
+
+document
+  .getElementById('clear-button6')
+  .addEventListener('click', function (event) {
+    const partiesInput = document.getElementById('parties-input');
+    partiesInput.value = ''; // Clear the input value
+    partiesInput.focus(); // Optionally refocus the input field
+    partiesInput.style.fontSize = '9px'; // Reset to the default font size as per the CSS
+    event.preventDefault(); // Prevent any unexpected behavior
+    // document.getElementById('clear-button2').style.display = 'none'
+  });
+
+document
+  .getElementById('clear-button7')
+  .addEventListener('click', function (event) {
+    const consultantInput = document.getElementById('consultant-input');
+    consultantInput.value = ''; // Clear the input value
+    consultantInput.focus(); // Optionally refocus the input field
+    consultantInput.style.fontSize = '9px'; // Reset to the default font size as per the CSS
+    event.preventDefault(); // Prevent any unexpected behavior
+    // document.getElementById('clear-button2').style.display = 'none'
+  });
+
+document
+  .getElementById('clear-button8')
+  .addEventListener('click', function (event) {
+    const contractorInput = document.getElementById('contractor-input');
+    contractorInput.value = ''; // Clear the input value
+    contractorInput.focus(); // Optionally refocus the input field
+    contractorInput.style.fontSize = '9px'; // Reset to the default font size as per the CSS
+    event.preventDefault(); // Prevent any unexpected behavior
+    // document.getElementById('clear-button2').style.display = 'none'
+  });
+
+document
+  .getElementById('clear-button9')
+  .addEventListener('click', function (event) {
+    const elecContractorInput = document.getElementById('elec-contractor-input');
+    elecContractorInput.value = ''; // Clear the input value
+    elecContractorInput.focus(); // Optionally refocus the input field
+    elecContractorInput.style.fontSize = '9px'; // Reset to the default font size as per the CSS
+    event.preventDefault(); // Prevent any unexpected behavior
+    // document.getElementById('clear-button2').style.display = 'none'
+  });
+
 // Full list of 404 areas
 const areas = [
   'Ad Dafain',
@@ -806,21 +936,341 @@ toggleButton.addEventListener('click', () => {
   toggleButton.style.color = isBold ? '#000' : '#000';
 });
 
-// // Ensure the PDF hides the elements dynamically
-// document.getElementById('download-pdf').addEventListener('click', () => {
-//   const plotNo1Input = document.getElementById('plotNo1-input');
-//   const clearButton5 = document.getElementById('clear-button5');
-//   const mulk = document.getElementById('mulk');
+function adjustProjectInputFontSize() {
+  const projectInput = document.getElementById('project-input');
+  const td46 = document.getElementById('td46');
 
-//   // Hide elements if conditions are met
-//   if (plotNo1Input.value.trim() === '') {
-//     plotNo1Input.style.display = 'none';
-//     clearButton5.style.display = 'none';
-//     mulk.style.display = 'none';
-//   }
-//   else {
-//     plotNo1Input.style.display = 'inline-block';
-//     clearButton5.style.display = 'inline-block';
-//     mulk.style.display = 'inline-block';
-//   }
-// });
+  // Get the initial font size
+  let fontSize = parseFloat(window.getComputedStyle(projectInput).fontSize);
+
+  // Define the minimum font size
+  const minFontSize = 5;
+
+  // Reduce the font size incrementally if the text overflows
+  if (
+    projectInput.scrollWidth > projectInput.clientWidth &&
+    fontSize > minFontSize
+  ) {
+    fontSize -= 0.01; // Reduce font size smoothly in small steps
+    projectInput.style.fontSize = `${fontSize}px`;
+  }
+
+  // Increase the font size incrementally if there is extra space
+  if (projectInput.scrollWidth <= projectInput.clientWidth && fontSize < 9) {
+    fontSize += 0.01; // Increase font size smoothly in small steps
+    projectInput.style.fontSize = `${fontSize}px`;
+  }
+}
+
+function handlePasteEvent(event) {
+  const projectInput = document.getElementById('project-input');
+  let fontSize = parseFloat(window.getComputedStyle(projectInput).fontSize);
+  const minFontSize = 5; // Define the minimum font size
+  const threshold = 66; // Number of characters before reducing font size
+
+  // Use a small delay to ensure the pasted content is in the input
+  setTimeout(() => {
+    const pastedText = projectInput.value;
+    const textLength = pastedText.length;
+
+    console.log('Pasted text length:', textLength);
+
+    // Reduce the font size incrementally if the text overflows or exceeds the threshold
+    if (
+      projectInput.scrollWidth > projectInput.clientWidth &&
+      fontSize > minFontSize
+    ) {
+      if (textLength > threshold) {
+        // Calculate how much to reduce the font size
+        const excessCharacters = textLength - threshold; // Number of extra characters
+        const fontSizeReduction = excessCharacters * 0.01; // Reduce 0.01px per character
+
+        fontSize = Math.max(minFontSize, fontSize - fontSizeReduction); // Ensure font size doesn't go below minFontSize
+        projectInput.style.fontSize = `${fontSize}px`;
+
+        console.log('Adjusted font size:', fontSize);
+      }
+    }
+  }, 0); // Delay ensures content is pasted before processing
+}
+
+// Attach the function to dynamically adjust font size on input or paste
+const projectInput = document.getElementById('project-input');
+projectInput.addEventListener('input', adjustProjectInputFontSize); // For typing
+projectInput.addEventListener('paste', handlePasteEvent); // For pasting
+
+// Initialize font size adjustment for any pre-filled values
+adjustProjectInputFontSize();
+
+function adjustPartiesInputFontSize() {
+  const partiesInput = document.getElementById('parties-input');
+  const td50 = document.getElementById('td50');
+
+  // Get the initial font size
+  let fontSize = parseFloat(window.getComputedStyle(partiesInput).fontSize);
+
+  // Define the minimum font size
+  const minFontSize = 5;
+
+  // Reduce the font size incrementally if the text overflows
+  if (
+    partiesInput.scrollWidth > partiesInput.clientWidth &&
+    fontSize > minFontSize
+  ) {
+    fontSize -= 0.01; // Reduce font size smoothly in small steps
+    partiesInput.style.fontSize = `${fontSize}px`;
+  }
+
+  // Increase the font size incrementally if there is extra space
+  if (partiesInput.scrollWidth <= partiesInput.clientWidth && fontSize < 9) {
+    fontSize += 0.01; // Increase font size smoothly in small steps
+    partiesInput.style.fontSize = `${fontSize}px`;
+  }
+}
+
+function handlePasteEvent1(event) {
+  const partiesInput = document.getElementById('parties-input');
+  let fontSize = parseFloat(window.getComputedStyle(partiesInput).fontSize);
+  const minFontSize = 5; // Define the minimum font size
+  const threshold = 66; // Number of characters before reducing font size
+
+  // Use a small delay to ensure the pasted content is in the input
+  setTimeout(() => {
+    const pastedText = partiesInput.value;
+    const textLength = pastedText.length;
+
+    console.log('Pasted text length:', textLength);
+
+    // Reduce the font size incrementally if the text overflows or exceeds the threshold
+    if (
+      partiesInput.scrollWidth > partiesInput.clientWidth &&
+      fontSize > minFontSize
+    ) {
+      if (textLength > threshold) {
+        // Calculate how much to reduce the font size
+        const excessCharacters = textLength - threshold; // Number of extra characters
+        const fontSizeReduction = excessCharacters * 0.01; // Reduce 0.01px per character
+
+        fontSize = Math.max(minFontSize, fontSize - fontSizeReduction); // Ensure font size doesn't go below minFontSize
+        partiesInput.style.fontSize = `${fontSize}px`;
+
+        console.log('Adjusted font size:', fontSize);
+      }
+    }
+  }, 0); // Delay ensures content is pasted before processing
+}
+
+// Attach the function to dynamically adjust font size on input or paste
+const partiesInput = document.getElementById('parties-input');
+partiesInput.addEventListener('input', adjustPartiesInputFontSize); // For typing
+partiesInput.addEventListener('paste', handlePasteEvent1); // For pasting
+
+// Initialize font size adjustment for any pre-filled values
+adjustPartiesInputFontSize();
+
+function adjustConsultantInputFontSize() {
+  const consultantInput = document.getElementById('consultant-input');
+  const td51 = document.getElementById('td51');
+
+  // Get the initial font size
+  let fontSize = parseFloat(window.getComputedStyle(consultantInput).fontSize);
+
+  // Define the minimum font size
+  const minFontSize = 5;
+
+  // Reduce the font size incrementally if the text overflows
+  if (
+    consultantInput.scrollWidth > consultantInput.clientWidth &&
+    fontSize > minFontSize
+  ) {
+    fontSize -= 0.01; // Reduce font size smoothly in small steps
+    consultantInput.style.fontSize = `${fontSize}px`;
+  }
+
+  // Increase the font size incrementally if there is extra space
+  if (
+    consultantInput.scrollWidth <= consultantInput.clientWidth &&
+    fontSize < 9
+  ) {
+    fontSize += 0.01; // Increase font size smoothly in small steps
+    consultantInput.style.fontSize = `${fontSize}px`;
+  }
+}
+
+function handlePasteEvent2(event) {
+  const consultantInput = document.getElementById('consultant-input');
+  let fontSize = parseFloat(window.getComputedStyle(consultantInput).fontSize);
+  const minFontSize = 5; // Define the minimum font size
+  const threshold = 66; // Number of characters before reducing font size
+
+  // Use a small delay to ensure the pasted content is in the input
+  setTimeout(() => {
+    const pastedText = consultantInput.value;
+    const textLength = pastedText.length;
+
+    console.log('Pasted text length:', textLength);
+
+    // Reduce the font size incrementally if the text overflows or exceeds the threshold
+    if (
+      consultantInput.scrollWidth > consultantInput.clientWidth &&
+      fontSize > minFontSize
+    ) {
+      if (textLength > threshold) {
+        // Calculate how much to reduce the font size
+        const excessCharacters = textLength - threshold; // Number of extra characters
+        const fontSizeReduction = excessCharacters * 0.01; // Reduce 0.01px per character
+
+        fontSize = Math.max(minFontSize, fontSize - fontSizeReduction); // Ensure font size doesn't go below minFontSize
+        consultantInput.style.fontSize = `${fontSize}px`;
+
+        console.log('Adjusted font size:', fontSize);
+      }
+    }
+  }, 0); // Delay ensures content is pasted before processing
+}
+
+// Attach the function to dynamically adjust font size on input or paste
+const consultantInput = document.getElementById('consultant-input');
+consultantInput.addEventListener('input', adjustConsultantInputFontSize); // For typing
+consultantInput.addEventListener('paste', handlePasteEvent2); // For pasting
+
+// Initialize font size adjustment for any pre-filled values
+adjustConsultantInputFontSize();
+
+function adjustContractorInputFontSize() {
+  const contractorInput = document.getElementById('contractor-input');
+  const td52 = document.getElementById('td52');
+
+  // Get the initial font size
+  let fontSize = parseFloat(window.getComputedStyle(contractorInput).fontSize);
+
+  // Define the minimum font size
+  const minFontSize = 5;
+
+  // Reduce the font size incrementally if the text overflows
+  if (
+    contractorInput.scrollWidth > contractorInput.clientWidth &&
+    fontSize > minFontSize
+  ) {
+    fontSize -= 0.01; // Reduce font size smoothly in small steps
+    contractorInput.style.fontSize = `${fontSize}px`;
+  }
+
+  // Increase the font size incrementally if there is extra space
+  if (
+    contractorInput.scrollWidth <= contractorInput.clientWidth &&
+    fontSize < 9
+  ) {
+    fontSize += 0.01; // Increase font size smoothly in small steps
+    contractorInput.style.fontSize = `${fontSize}px`;
+  }
+}
+
+function handlePasteEvent3(event) {
+  const contractorInput = document.getElementById('contractor-input');
+  let fontSize = parseFloat(window.getComputedStyle(contractorInput).fontSize);
+  const minFontSize = 5; // Define the minimum font size
+  const threshold = 66; // Number of characters before reducing font size
+
+  // Use a small delay to ensure the pasted content is in the input
+  setTimeout(() => {
+    const pastedText = contractorInput.value;
+    const textLength = pastedText.length;
+
+    console.log('Pasted text length:', textLength);
+
+    // Reduce the font size incrementally if the text overflows or exceeds the threshold
+    if (
+      contractorInput.scrollWidth > contractorInput.clientWidth &&
+      fontSize > minFontSize
+    ) {
+      if (textLength > threshold) {
+        // Calculate how much to reduce the font size
+        const excessCharacters = textLength - threshold; // Number of extra characters
+        const fontSizeReduction = excessCharacters * 0.01; // Reduce 0.01px per character
+
+        fontSize = Math.max(minFontSize, fontSize - fontSizeReduction); // Ensure font size doesn't go below minFontSize
+        contractorInput.style.fontSize = `${fontSize}px`;
+
+        console.log('Adjusted font size:', fontSize);
+      }
+    }
+  }, 0); // Delay ensures content is pasted before processing
+}
+
+// Attach the function to dynamically adjust font size on input or paste
+const contractorInput = document.getElementById('contractor-input');
+contractorInput.addEventListener('input', adjustContractorInputFontSize); // For typing
+contractorInput.addEventListener('paste', handlePasteEvent3); // For pasting
+
+// Initialize font size adjustment for any pre-filled values
+adjustContractorInputFontSize();
+
+function adjustElecContractorInputFontSize() {
+  const elecContractorInput = document.getElementById('elec-contractor-input');
+  const td53 = document.getElementById('td53');
+
+  // Get the initial font size
+  let fontSize = parseFloat(window.getComputedStyle(elecContractorInput).fontSize);
+
+  // Define the minimum font size
+  const minFontSize = 5;
+
+  // Reduce the font size incrementally if the text overflows
+  if (
+    elecContractorInput.scrollWidth > elecContractorInput.clientWidth &&
+    fontSize > minFontSize
+  ) {
+    fontSize -= 0.01; // Reduce font size smoothly in small steps
+    elecContractorInput.style.fontSize = `${fontSize}px`;
+  }
+
+  // Increase the font size incrementally if there is extra space
+  if (
+    elecContractorInput.scrollWidth <= elecContractorInput.clientWidth &&
+    fontSize < 9
+  ) {
+    fontSize += 0.01; // Increase font size smoothly in small steps
+    elecContractorInput.style.fontSize = `${fontSize}px`;
+  }
+}
+
+function handlePasteEvent4(event) {
+  const elecContractorInput = document.getElementById('elec-contractor-input');
+  let fontSize = parseFloat(window.getComputedStyle(elecContractorInput).fontSize);
+  const minFontSize = 5; // Define the minimum font size
+  const threshold = 66; // Number of characters before reducing font size
+
+  // Use a small delay to ensure the pasted content is in the input
+  setTimeout(() => {
+    const pastedText = elecContractorInput.value;
+    const textLength = pastedText.length;
+
+    console.log('Pasted text length:', textLength);
+
+    // Reduce the font size incrementally if the text overflows or exceeds the threshold
+    if (
+      elecContractorInput.scrollWidth > elecContractorInput.clientWidth &&
+      fontSize > minFontSize
+    ) {
+      if (textLength > threshold) {
+        // Calculate how much to reduce the font size
+        const excessCharacters = textLength - threshold; // Number of extra characters
+        const fontSizeReduction = excessCharacters * 0.01; // Reduce 0.01px per character
+
+        fontSize = Math.max(minFontSize, fontSize - fontSizeReduction); // Ensure font size doesn't go below minFontSize
+        elecContractorInput.style.fontSize = `${fontSize}px`;
+
+        console.log('Adjusted font size:', fontSize);
+      }
+    }
+  }, 0); // Delay ensures content is pasted before processing
+}
+
+// Attach the function to dynamically adjust font size on input or paste
+const elecContractorInput = document.getElementById('elec-contractor-input');
+elecContractorInput.addEventListener('input', adjustElecContractorInputFontSize); // For typing
+elecContractorInput.addEventListener('paste', handlePasteEvent4); // For pasting
+
+// Initialize font size adjustment for any pre-filled values
+adjustElecContractorInputFontSize();

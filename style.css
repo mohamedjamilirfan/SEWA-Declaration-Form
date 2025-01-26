@@ -68,20 +68,22 @@ main {
 }
 
 #pdf-logo1 {
-  height: 130px;
-  width: 135px;
-  margin: 0px auto;
+  height: 125px;
+  width: 133px;
+  margin-left: 4px;
+  /* margin: 0px auto; */
   background-color: transparent;
 }
 
 #table-container {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 #tr1 {
-  padding: 4px 10px 5px 10px;
-  font-size: 12px;
+  padding: 2px 10px 5px 10px;
+  font-size: 10.9px;
   font-weight: 500;
 }
 
@@ -140,6 +142,10 @@ main {
   border-radius: 2px;
 }
 
+#td46 {
+  width: 312px;
+}
+
 #plotNo-input,
 #plotNo1-input {
   border: none;
@@ -160,6 +166,10 @@ main {
   border-radius: 2px;
 }
 
+input[type='text'] {
+  transition: font-size 0.2s ease;
+}
+
 #project-input {
   border: none;
   outline: none;
@@ -170,6 +180,7 @@ main {
   width: 300px;
   padding: 1px 1px 1px 3px;
   border-radius: 2px;
+  line-height: 10.5px;
 }
 
 #project-input:focus {
@@ -198,6 +209,99 @@ main {
   border-radius: 2px;
 }
 
+#td50 {
+  width: 312px;
+}
+
+#parties-input {
+  border: none;
+  outline: none;
+  border: 0.5px solid black;
+  font-family: EnglishRegular;
+  font-weight: 500;
+  font-size: 9px;
+  width: 300px;
+  padding: 1px 1px 1px 3px;
+  border-radius: 2px;
+}
+
+#parties-input:focus {
+  border: none;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+#td51 {
+  width: 312px;
+}
+
+#consultant-input {
+  border: none;
+  outline: none;
+  border: 0.5px solid black;
+  font-family: EnglishRegular;
+  font-weight: 500;
+  font-size: 9px;
+  width: 300px;
+  padding: 1px 1px 1px 3px;
+  border-radius: 2px;
+}
+
+#consultant-input:focus {
+  border: none;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+#td52 {
+  width: 312px;
+}
+
+#contractor-input {
+  border: none;
+  outline: none;
+  border: 0.5px solid black;
+  font-family: EnglishRegular;
+  font-weight: 500;
+  font-size: 9px;
+  width: 300px;
+  padding: 1px 1px 1px 3px;
+  border-radius: 2px;
+}
+
+#contractor-input:focus {
+  border: none;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
+#td53 {
+  width: 312px;
+}
+
+
+#elec-contractor-input {
+  border: none;
+  outline: none;
+  border: 0.5px solid black;
+  font-family: EnglishRegular;
+  font-weight: 500;
+  font-size: 9px;
+  width: 300px;
+  padding: 1px 1px 1px 3px;
+  border-radius: 2px;
+}
+
+#elec-contractor-input:focus {
+  border: none;
+  outline: none;
+  border: 1px solid black;
+  border-radius: 2px;
+}
+
 /* Hide spinners in Chrome, Edge, and Safari */
 input[type='number']::-webkit-inner-spin-button,
 input[type='number']::-webkit-outer-spin-button {
@@ -219,13 +323,20 @@ input[type='number'] {
   position: relative;
   padding-right: 25px; /* Leave space for the X button */
 }
+input[type='text'] {
+  transition: font-size 0.2s ease;
+}
 
 #clear-button,
 #clear-button1,
 #clear-button2,
 #clear-button3,
 #clear-button4,
-#clear-button5 {
+#clear-button5,
+#clear-button6,
+#clear-button7,
+#clear-button8,
+#clear-button9 {
   font-size: 8px;
   color: black;
   border: none;
@@ -370,6 +481,7 @@ td {
 table {
   border-collapse: collapse;
   border: solid black 1px;
+  table-layout: fixed; /* Ensures widths are respected */
 }
 
 #td6 {

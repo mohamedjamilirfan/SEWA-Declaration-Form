@@ -13,7 +13,7 @@
         <div id="image-container1">
           <img id="pdf-logo1" src="Images/image.png" alt="" />
           <div id="table-container">
-            <table>
+            <table id="table1">
               <tr>
                 <th id="tr1" colspan="3">
                   Declaration and Commitment -
@@ -21,18 +21,18 @@
                 </th>
               </tr>
               <tr>
-                <td id="td1">Owner Name:</td>
+                <td id="td31">Owner Name:</td>
                 <td id="td2" class="font">
                   <div style="position: relative; display: inline-block">
                     <select id="title-select">
-                      <option style="font-weight: 700" value="MR.">Mr.</option>
-                      <option style="font-weight: 700" value="MRS.">
+                      <option style="font-weight: 700" value="Mr.">Mr.</option>
+                      <option style="font-weight: 700" value="Mrs.">
                         Mrs.
                       </option>
-                      <option style="font-weight: 700" value="MISS.">
+                      <option style="font-weight: 700" value="Miss.">
                         Miss.
                       </option>
-                      <option style="font-weight: 700" value="MS.">Ms.</option>
+                      <option style="font-weight: 700" value="Ms.">Ms.</option>
                     </select>
                     <input
                       type="text"
@@ -45,7 +45,7 @@
                 <td id="td3" class="arabic td11">اسم المالك:</td>
               </tr>
               <tr>
-                <td>Area:</td>
+                <td id="td32">Area:</td>
                 <td id="td44" class="font">
                   <div style="position: relative; width: 200px">
                     <input
@@ -60,10 +60,10 @@
                       style="width: 100%; position: absolute"></select>
                   </div>
                 </td>
-                <td class="arabic td11">المنطقة:</td>
+                <td 311" class="arabic td11">المنطقة:</td>
               </tr>
               <tr>
-                <td>Plot No.:</td>
+                <td id="td33">Plot No.:</td>
                 <td id="td45" class="font">
                   <div style="position: relative; display: inline-block">
                     <input
@@ -84,10 +84,10 @@
                     <span id="mulk">(Mulk)</span>
                   </div>
                 </td>
-                <td class="arabic td11">رقم الأرض:</td>
+                <td id="td12" class="arabic td11">رقم الأرض:</td>
               </tr>
               <tr>
-                <td>Project description:</td>
+                <td id="td99" style="vertical-align: middle;">Project description:</td>
                 <td id="td46" class="font">
                   <div style="position: relative; display: inline-block">
                     <input
@@ -97,10 +97,10 @@
                     <button id="clear-button3">✖</button>
                   </div>
                 </td>
-                <td class="arabic td11">وصف المشروع:</td>
+                <td id="t13" class="arabic td11">وصف المشروع:</td>
               </tr>
               <tr>
-                <td>Required load:</td>
+                <td id="td34">Required load:</td>
                 <td id="td47" class="font">
                   <div
                     style="
@@ -116,7 +116,7 @@
                   </div>
                   <span id="kw">KW</span>
                 </td>
-                <td class="arabic td11">الحمولة المطلوبة:</td>
+                <td id="t14" class="arabic td11">الحمولة المطلوبة:</td>
               </tr>
               <tr>
                 <td id="td5">Project type:</td>
@@ -236,27 +236,59 @@
                     </li>
                   </ul>
                 </td>
-                <td class="arabic td9 td11">نوع المشروع:</td>
+                <td id="t15" class="arabic td9 td11">نوع المشروع:</td>
               </tr>
               <tr>
-                <td>Parties involved:</td>
-                <td class="font">-</td>
-                <td class="arabic td11">الأطراف المعنية:</td>
+                <td id="td35">Parties involved:</td>
+                <td id="td50" class="font">
+                  <div style="position: relative; display: inline-block">
+                    <input
+                      type="text"
+                      id="parties-input"
+                      placeholder="Enter Parties Name" />
+                    <button id="clear-button6">✖</button>
+                  </div>
+                </td>
+                <td id="t16" class="arabic td11">الأطراف المعنية:</td>
               </tr>
               <tr>
-                <td>Consultant (if available):</td>
-                <td class="font">Universal Design Office</td>
-                <td class="arabic td11">الاستشاري (إن وجد):</td>
+                <td id="td36">Consultant (if available):</td>
+                <td id="td51" class="font">
+                  <div style="position: relative; display: inline-block">
+                    <input
+                      type="text"
+                      id="consultant-input"
+                      placeholder="Enter Consultant Name" />
+                    <button id="clear-button7">✖</button>
+                  </div>
+                </td>
+                <td id="t17" class="arabic td11">الاستشاري (إن وجد):</td>
               </tr>
               <tr>
-                <td>Main contractor (if<br />available):</td>
-                <td class="font">Universal Design Office</td>
-                <td class="arabic td11">المقاول الرئيسي (إن وجد):</td>
+                <td id="td37">Main contractor (if<br />available):</td>
+                <td id="td52" class="font">
+                  <div style="position: relative; display: inline-block">
+                    <input
+                      type="text"
+                      id="contractor-input"
+                      placeholder="Enter Contractor Name" />
+                    <button id="clear-button8">✖</button>
+                  </div>
+                </td>
+                <td id="td79" class="arabic td11">المقاول الرئيسي (إن وجد):</td>
               </tr>
               <tr>
-                <td>Electrical contractor:</td>
-                <td class="font">-</td>
-                <td class="arabic td11">مقاول الكهرباء:</td>
+                <td id="td38">Electrical contractor:</td>
+                <td id="td53" class="font">
+                  <div style="position: relative; display: inline-block">
+                    <input
+                      type="text"
+                      id="elec-contractor-input"
+                      placeholder="Enter Electrical Contractor Name" />
+                    <button id="clear-button9">✖</button>
+                  </div>
+                </td>
+                <td id="td18" class="arabic td11">مقاول الكهرباء:</td>
               </tr>
             </table>
             <table id="table2">
