@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SEWA Declaration & Commitment Form</title>
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <main>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SEWA Declaration & Commitment Form</title>
+  <link rel="stylesheet" href="reset.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <section id="section21">
+    <main id="main21">
       <section id="page1">
         <div id="image-container1">
           <img id="pdf-logo1" src="Images/image.png" alt="" />
@@ -21,7 +24,7 @@
                 </th>
               </tr>
               <tr>
-                <td id="td31">Owner Name:</td>
+                <td id="td31" style="font-weight: 700;">Owner Name:</td>
                 <td id="td2" class="font">
                   <div style="position: relative; display: inline-block">
                     <select id="title-select">
@@ -34,10 +37,7 @@
                       </option>
                       <option style="font-weight: 700" value="Ms.">Ms.</option>
                     </select>
-                    <input
-                      type="text"
-                      id="name-input"
-                      placeholder="Enter Name" />
+                    <input type="text" id="name-input" placeholder="Enter Name" />
                     <button id="clear-button">✖</button>
                   </div>
                 </td>
@@ -45,40 +45,27 @@
                 <td id="td3" class="arabic td11">اسم المالك:</td>
               </tr>
               <tr>
-                <td id="td32">Area:</td>
+                <td id="td32" style="font-weight: 700;">Area:</td>
                 <td id="td44" class="font">
-                  <div style="position: relative; width: 200px">
-                    <input
-                      type="text"
-                      id="area-search"
-                      placeholder="Search Area..."
-                      style="width: 100%" />
+                  <div id="area-search-div">
+                    <input type="text" id="area-search" placeholder="Search Area..." />
                     <button id="clear-button1">✖</button>
-                    <select
-                      id="area-select"
-                      size="10"
-                      style="width: 100%; position: absolute"></select>
+                    <select id="area-select" size="10"></select>
                   </div>
                 </td>
                 <td 311" class="arabic td11">المنطقة:</td>
               </tr>
               <tr>
-                <td id="td33">Plot No.:</td>
+                <td id="td33" style="font-weight: 700;">Plot No.:</td>
                 <td id="td45" class="font">
                   <div style="position: relative; display: inline-block">
-                    <input
-                      type="text"
-                      id="plotNo-input"
-                      placeholder="Enter Minha Number" />
+                    <input type="text" id="plotNo-input" placeholder="Enter Minha Number" />
                     <button id="clear-button2">✖</button>
                   </div>
                   <span id="minha">(Minha)</span>
                   <div id="apj" style="position: relative; display: inline-block">
                     <div style="position: relative; display: inline-block">
-                      <input
-                        type="text"
-                        id="plotNo1-input"
-                        placeholder="Enter Mulk Number" />
+                      <input type="text" id="plotNo1-input" placeholder="Enter Mulk Number" />
                       <button id="clear-button5">✖</button>
                     </div>
                     <span id="mulk">(Mulk)</span>
@@ -87,31 +74,24 @@
                 <td id="td12" class="arabic td11">رقم الأرض:</td>
               </tr>
               <tr>
-                <td id="td99" style="vertical-align: middle;">Project description:</td>
+                <td id="td99" style="vertical-align: middle; font-weight: 700;">Project description:</td>
                 <td id="td46" class="font">
                   <div style="position: relative; display: inline-block">
-                    <input
-                      type="text"
-                      id="project-input"
-                      placeholder="Enter Project Description" />
+                    <input type="text" id="project-input" placeholder="Enter Project Description" />
                     <button id="clear-button3">✖</button>
                   </div>
                 </td>
                 <td id="t13" class="arabic td11">وصف المشروع:</td>
               </tr>
               <tr>
-                <td id="td34">Required load:</td>
+                <td id="td34" style="font-weight: 700;">Required load:</td>
                 <td id="td47" class="font">
-                  <div
-                    style="
-                      position: relative;
-                      display: inline-block;
-                      width: 40%;
-                    ">
-                    <input
-                      type="number"
-                      id="load-input"
-                      placeholder="Enter Load" />
+                  <div style="
+                        position: relative;
+                        display: inline-block;
+                        width: 40%;
+                      ">
+                    <input type="number" id="load-input" placeholder="Enter Load" />
                     <button id="clear-button4">✖</button>
                   </div>
                   <span id="kw">KW</span>
@@ -119,63 +99,53 @@
                 <td id="t14" class="arabic td11">الحمولة المطلوبة:</td>
               </tr>
               <tr>
-                <td id="td5">Project type:</td>
+                <td id="td5" style="font-weight: 700;">Project type:</td>
                 <td class="font" id="td4">
                   <ul id="ul1">
                     <li>
                       <label class="custom-checkbox">
                         <input type="checkbox" />
                         <span class="checkmark">
-                          <img
-                            src="Images/android-chrome-512x512.png"
-                            alt="Checkmark" />
+                          <img src="Images/android-chrome-512x512.png" alt="Checkmark" />
                         </span>
                       </label>
-                      Residential (Private)
+                      <span id="span131" style="font-size: 10px;">Residential (Private)</span>
                     </li>
                     <li>
                       <label class="custom-checkbox">
                         <input type="checkbox" />
                         <span class="checkmark">
-                          <img
-                            src="Images/android-chrome-512x512.png"
-                            alt="Checkmark" />
+                          <img src="Images/android-chrome-512x512.png" alt="Checkmark" />
                         </span>
                       </label>
-                      Residential (Commercial)
+                      <span id="span132" style="font-size: 10px;">Residential (Commercial)</span>
                     </li>
                     <li>
                       <label class="custom-checkbox">
                         <input type="checkbox" />
                         <span class="checkmark">
-                          <img
-                            src="Images/android-chrome-512x512.png"
-                            alt="Checkmark" />
+                          <img src="Images/android-chrome-512x512.png" alt="Checkmark" />
                         </span>
                       </label>
-                      Commercial
+                      <span id="span133" style="font-size: 10px;">Commercial</span>
                     </li>
                     <li>
                       <label class="custom-checkbox">
                         <input type="checkbox" />
                         <span class="checkmark">
-                          <img
-                            src="Images/android-chrome-512x512.png"
-                            alt="Checkmark" />
+                          <img src="Images/android-chrome-512x512.png" alt="Checkmark" />
                         </span>
                       </label>
-                      Industrial
+                      <span id="span134" style="font-size: 10px;">Industrial</span>
                     </li>
                     <li>
                       <label class="custom-checkbox">
                         <input type="checkbox" />
                         <span class="checkmark">
-                          <img
-                            src="Images/android-chrome-512x512.png"
-                            alt="Checkmark" />
+                          <img src="Images/android-chrome-512x512.png" alt="Checkmark" />
                         </span>
                       </label>
-                      Agricultural
+                      <span id="span135" style="font-size: 10px;">Agricultural</span>
                     </li>
                   </ul>
                   <ul class="font2" id="ul2">
@@ -183,54 +153,44 @@
                       <label class="custom-checkbox">
                         <input type="checkbox" />
                         <span class="checkmark">
-                          <img
-                            src="Images/android-chrome-512x512.png"
-                            alt="Checkmark" />
+                          <img src="Images/android-chrome-512x512.png" alt="Checkmark" />
                         </span>
                       </label>
-                      سكني (خاص)
+                      <span id="span136">سكني (خاص)</span>
                     </li>
                     <li class="arabic">
                       <label class="custom-checkbox">
                         <input type="checkbox" />
                         <span class="checkmark">
-                          <img
-                            src="Images/android-chrome-512x512.png"
-                            alt="Checkmark" />
+                          <img src="Images/android-chrome-512x512.png" alt="Checkmark" />
                         </span>
                       </label>
-                      سكني (استثماري)
+                      <span id="span137">سكني (استثماري)</span>
                     </li>
                     <li>
-                      تجاري
+                      <span id="span138">تجاري</span>
                       <label class="custom-checkbox">
                         <input type="checkbox" />
                         <span class="checkmark">
-                          <img
-                            src="Images/android-chrome-512x512.png"
-                            alt="Checkmark" />
+                          <img src="Images/android-chrome-512x512.png" alt="Checkmark" />
                         </span>
                       </label>
                     </li>
                     <li>
-                      صناعي
+                      <span id="span139">صناعي</span>
                       <label class="custom-checkbox">
                         <input type="checkbox" />
                         <span class="checkmark">
-                          <img
-                            src="Images/android-chrome-512x512.png"
-                            alt="Checkmark" />
+                          <img src="Images/android-chrome-512x512.png" alt="Checkmark" />
                         </span>
                       </label>
                     </li>
                     <li>
-                      زراعي
+                      <span id="span140">زراعي</span>
                       <label class="custom-checkbox">
                         <input type="checkbox" />
                         <span class="checkmark">
-                          <img
-                            src="Images/android-chrome-512x512.png"
-                            alt="Checkmark" />
+                          <img src="Images/android-chrome-512x512.png" alt="Checkmark" />
                         </span>
                       </label>
                     </li>
@@ -239,52 +199,40 @@
                 <td id="t15" class="arabic td9 td11">نوع المشروع:</td>
               </tr>
               <tr>
-                <td id="td35">Parties involved:</td>
+                <td id="td35" style="font-weight: 700;">Parties involved:</td>
                 <td id="td50" class="font">
                   <div style="position: relative; display: inline-block">
-                    <input
-                      type="text"
-                      id="parties-input"
-                      placeholder="Enter Parties Name" />
+                    <input type="text" id="parties-input" placeholder="Enter Parties Name" />
                     <button id="clear-button6">✖</button>
                   </div>
                 </td>
                 <td id="t16" class="arabic td11">الأطراف المعنية:</td>
               </tr>
               <tr>
-                <td id="td36">Consultant (if available):</td>
+                <td id="td36" style="font-weight: 700;">Consultant (if available):</td>
                 <td id="td51" class="font">
                   <div style="position: relative; display: inline-block">
-                    <input
-                      type="text"
-                      id="consultant-input"
-                      placeholder="Enter Consultant Name" />
+                    <input type="text" id="consultant-input" placeholder="Enter Consultant Name" />
                     <button id="clear-button7">✖</button>
                   </div>
                 </td>
                 <td id="t17" class="arabic td11">الاستشاري (إن وجد):</td>
               </tr>
               <tr>
-                <td id="td37">Main contractor (if<br />available):</td>
+                <td id="td37" style="font-weight: 700;">Main contractor (if<br />available):</td>
                 <td id="td52" class="font">
                   <div style="position: relative; display: inline-block">
-                    <input
-                      type="text"
-                      id="contractor-input"
-                      placeholder="Enter Contractor Name" />
+                    <input type="text" id="contractor-input" placeholder="Enter Contractor Name" />
                     <button id="clear-button8">✖</button>
                   </div>
                 </td>
-                <td id="td79" class="arabic td11">المقاول الرئيسي (إن وجد):</td>
+                <td id="td79" style="width: 109px;" class="arabic td11">المقاول الرئيسي (إن وجد):</td>
               </tr>
               <tr>
-                <td id="td38">Electrical contractor:</td>
+                <td id="td38" style="font-weight: 700;">Electrical contractor:</td>
                 <td id="td53" class="font">
                   <div style="position: relative; display: inline-block">
-                    <input
-                      type="text"
-                      id="elec-contractor-input"
-                      placeholder="Enter Electrical Contractor Name" />
+                    <input type="text" id="elec-contractor-input" placeholder="Enter Electrical Contractor Name" />
                     <button id="clear-button9">✖</button>
                   </div>
                 </td>
@@ -294,7 +242,7 @@
             <table id="table2">
               <tr>
                 <td id="td6">
-                  <span id="terms">Terms and Conditions:</span>
+                  <span id="terms" style="font-weight: 700;">Terms and Conditions:</span>
                   <ul class="font" id="ul3">
                     <li id="li1">
                       Electricity connection service fees for projects
@@ -321,27 +269,26 @@
                     <li id="li1">
                       For residential projects, all mentioned fees above are
                       collected once the project completion reaches 60-80%. The
-                      project consultant must submit Final Connection service
-                      request when the project completion reaches 90% or more.
+                      project consultant must submit Final
                     </li>
                   </ul>
                 </td>
                 <td id="td7">
                   <h4 id="terms1" class="arabic">الشروط والأحكام:</h4>
                   <ul class="font2" id="ul5">
-                    <li>
+                    <li style="margin-bottom: 12px;">
                       تشمل رسوم خدمة توصيل الكهرباء للمشاريع
                       (سكني/تجاري/صناعي/زراعي):
-                      <ul id="ul6">
-                        <li>-&nbsp;&nbsp; رسوم توصيل الكهرباء</li>
-                        <li>-&nbsp;&nbsp; رسوم اعتماد مخطط الكهرباء النهائي</li>
-                        <li>-&nbsp;&nbsp; رسوم المواد</li>
-                        <li>-&nbsp;&nbsp; رسوم فحص الكهرباء لمرة واحدة</li>
-                        <li>-&nbsp;&nbsp; رسوم شهادة الفحص المبدئي للكهرباء</li>
-                        <li>-&nbsp;&nbsp; رسوم تقديم الطلب</li>
+                      <ul style="margin-right: 5px;" id="ul6">
+                        <li>-&nbsp;&nbsp;&nbsp; رسوم توصيل الكهرباء</li>
+                        <li>-&nbsp;&nbsp;&nbsp; رسوم اعتماد مخطط الكهرباء النهائي</li>
+                        <li>-&nbsp;&nbsp;&nbsp; رسوم المواد</li>
+                        <li>-&nbsp;&nbsp;&nbsp; رسوم فحص الكهرباء لمرة واحدة</li>
+                        <li>-&nbsp;&nbsp;&nbsp; رسوم شهادة الفحص المبدئي للكهرباء</li>
+                        <li>-&nbsp;&nbsp;&nbsp; رسوم تقديم الطلب</li>
                       </ul>
                     </li>
-                    <li id="li5">
+                    <li style="word-spacing: 1px; margin-bottom: 25px;" id="li5">
                       يتم استيفاء رسوم توصيل الكهرباء في المشاريع
                       (التجارية/الصناعية) قبل المرحلة الإنشائية، ويتعين على
                       استشاري المشروع التقدم بفتح طلب توصيل خدمة الكهرباء في
@@ -360,12 +307,12 @@
             </table>
           </div>
           <div id="pageno-container">
-            <div id="line"></div>
+            <div style="height: 0.5px; background-color: #a09d9d; width: 87.5%;"></div>
             <h4 id="pageno">1 | <span>Page</span></h4>
             <div id="information">
               <h3>
-                PO.BOX: 135 SHJ. UAE&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;+971 6
-                50 28 888 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;www.sewa.gov.ae
+                PO.BOX: 135 SHJ. UAE&nbsp;&nbsp; &nbsp;|&nbsp;&nbsp; &nbsp;+971 6
+                50 28 888 &nbsp;&nbsp; &nbsp; |&nbsp;&nbsp; &nbsp;www.sewa.gov.ae
               </h3>
             </div>
           </div>
@@ -377,9 +324,11 @@
           <div id="table-container">
             <table id="table3">
               <tr>
-                <td id="td6">
-                  <ul class="font" id="ul3">
-                    <li id="li1">
+                <td id="td61">
+                  <ul class="font" id="ul99">
+                    <p id="p1">Connection service
+                      request when the project completion reaches 90% or more.</p>
+                    <li id="li1 dot" style="position: relative; top: -7px; word-spacing: 1px; text-align: justify;">
                       Private residential property trading (leasing or selling)
                       is prohibited for a period of three years from the date of
                       issuance of the completion certificate. Additional fees
@@ -390,7 +339,7 @@
                 </td>
                 <td id="td77">
                   <ul class="font2" id="ul5">
-                    <li id="li6">
+                    <li id="li6" style="top: -39px;">
                       يُحظر تداول العقار السكني الخاص (&#8201;تأجير أو بيع) لمدة
                       ثلاث سنوات من تاريخ صدور شهادة إنجاز البناء، ويتم احتساب
                       رسوم إضافية في حال تداول العقار خلال الفترة المذكورة
@@ -402,11 +351,9 @@
                 <td id="td15">
                   <div id="div1">
                     <label class="custom-checkbox1">
-                      <input type="checkbox" />
+                      <input id="termsinput1" type="checkbox" />
                       <span class="checkmark1">
-                        <img
-                          src="Images/android-chrome-512x512.png"
-                          alt="Checkmark" />
+                        <img src="Images/android-chrome-512x512.png" alt="Checkmark" />
                       </span>
                     </label>
                     <span>
@@ -418,11 +365,9 @@
                   </div>
                   <div id="div2">
                     <label class="custom-checkbox2">
-                      <input type="checkbox" />
+                      <input id="termsinput2" type="checkbox" />
                       <span class="checkmark2">
-                        <img
-                          src="Images/android-chrome-512x512.png"
-                          alt="Checkmark" />
+                        <img src="Images/android-chrome-512x512.png" alt="Checkmark" />
                       </span>
                     </label>
                     <span>
@@ -433,32 +378,28 @@
                   </div>
                 </td>
                 <td id="td16">
-                  <div id="div3">
+                  <div style="justify-content: end;" id="div3">
                     <span>
                       أُقر بالإطلاع على كافة الشروط والأحكام، وبصحة البيانات
-                      المقدمة في المستند، إلى جانب تحمل كافة التبعات القانونية
+                      المقدمة في <br>المستند، إلى جانب تحمل كافة التبعات القانونية
                       حِيال مخالفتي لما ورد أعلاه.
                     </span>
-                    <label class="custom-checkbox3">
-                      <input type="checkbox" />
+                    <label style="margin-top: 3px;" class="custom-checkbox3">
+                      <input id="termsinput3" type="checkbox" />
                       <span class="checkmark3">
-                        <img
-                          src="Images/android-chrome-512x512.png"
-                          alt="Checkmark" />
+                        <img src="Images/android-chrome-512x512.png" alt="Checkmark" />
                       </span>
                     </label>
                   </div>
                   <div id="div4">
                     <span>
-                      أتعهد أنا الموقع أدناه بعدم استخدام المشروع (السكني الخاص)
+                      أتعهد أنا الموقع أدناه بعدم استخدام المشروع (السكني الخاص) <br>
                       الذي تم تقديم طلب خدمة التوصيل له لغير الغرض المخصص له.
                     </span>
-                    <label class="custom-checkbox3">
-                      <input type="checkbox" />
+                    <label style="margin-top: 3px;" class="custom-checkbox3">
+                      <input id="termsinput4" type="checkbox" />
                       <span class="checkmark3">
-                        <img
-                          src="Images/android-chrome-512x512.png"
-                          alt="Checkmark" />
+                        <img src="Images/android-chrome-512x512.png" alt="Checkmark" />
                       </span>
                     </label>
                   </div>
@@ -472,30 +413,53 @@
                       <span id="span2">توقيع المالك</span>
                     </h3>
                     <div id="sign1"></div>
+                    <div id="sign2"
+                      style="display: none; width: 62%; height: 36px; background-color: white; z-index: 1000;"></div>
                   </div>
                 </td>
               </tr>
             </table>
           </div>
           <div id="pageno-container2">
-            <div id="line2"></div>
+            <div style="height: 0.5px; background-color: #a09d9d; width: 87.5%;"></div>
             <h4 id="pageno2">2 | <span>Page</span></h4>
             <div id="information2">
               <h3>
-                PO.BOX: 135 SHJ. UAE&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;+971 6
-                50 28 888 &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;www.sewa.gov.ae
+                PO.BOX: 135 SHJ. UAE&nbsp;&nbsp; &nbsp;|&nbsp;&nbsp; &nbsp;+971 6
+                50 28 888 &nbsp;&nbsp; &nbsp; |&nbsp;&nbsp; &nbsp;www.sewa.gov.ae
               </h3>
             </div>
           </div>
         </div>
       </section>
-      <div id="download-container">
-        <button id="download-pdf">Download as PDF</button>
+      <div id="loading-spinner" style="display: none;">
+        <span class="loader"></span>
+        <span id="loadertext">Preparing your document. Please wait a moment...</span>
       </div>
     </main>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <script src="script.js"></script>
-  </body>
+    <div id="download-container" accesskey="d">
+      <button id="download-pdf">Download as PDF</button>
+      <button id="toggle-view" title="Page View">
+        <span id="view-icon">📑 Horizontal</span>
+      </button>
+    </div>
+  </section>
+  <div id="reminder-popup">
+    <span>💡 Use shortcut key <strong style="font-weight: 600; font-size: 14px; letter-spacing: 1.5px;">"Ctrl + Shift + D"</strong> to download PDF easily.</span>
+    <button id="reminder-close">&times;</button>
+  </div>
+  <audio id="reminder-sound" src="Images/reminder.mp3" preload="auto"></audio>
+  <footer class="footer">
+    Designed with<span class="heart">❤️</span>by
+    <a href="https://mohamedjamilirfan-portfolio.vercel.app/" target="_blank">
+      Mohamed Jamil Irfan
+    </a>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
 </html>

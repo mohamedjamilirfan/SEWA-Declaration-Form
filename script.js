@@ -1,255 +1,584 @@
+window.addEventListener('DOMContentLoaded', () => {
+  if (localStorage.getItem('pdfDownloaded') === 'true') {
+    localStorage.removeItem('pdfDownloaded'); // Clear the flag
+
+    // ✅ Show success popup after reload
+    showSuccessPopup();
+  }
+});
+
 document
   .getElementById('download-pdf')
-  .addEventListener('click', async function () {
-    // Get the entered name
-    const nameInput = document.getElementById('name-input');
-    const titleSelect = document.getElementById('title-select');
-    const areaSearch = document.getElementById('area-search');
-    const areaSelect = document.getElementById('area-select');
-    const plotnoInput = document.getElementById('plotNo-input');
-    const plotno1Input = document.getElementById('plotNo1-input');
-    const mulk = document.getElementById('mulk');
-    const minha = document.getElementById('minha');
-    const projectInput = document.getElementById('project-input');
-    const partiesInput = document.getElementById('parties-input');
-    const consultantInput = document.getElementById('consultant-input');
-    const contractorInput = document.getElementById('contractor-input');
-    const elecContractorInput = document.getElementById(
-      'elec-contractor-input'
-    );
-    const td46 = document.getElementById('td46');
-    const td47 = document.getElementById('td47');
-    const td50 = document.getElementById('td50');
-    const td51 = document.getElementById('td51');
-    const td52 = document.getElementById('td52');
-    const td53 = document.getElementById('td53');
-    const loadInput = document.getElementById('load-input');
-    const kw = document.getElementById('kw');
-    const kvaSpan = document.getElementById('kva-span');
-    const clearButton5 = document.getElementById('clear-button5');
+  .addEventListener('click', async function (e) {
+    const checkbox1 = document.getElementById('termsinput1'); // English 1
+    const checkbox2 = document.getElementById('termsinput2'); // English 2
+    const checkbox3 = document.getElementById('termsinput3'); // Arabic 1
+    const checkbox4 = document.getElementById('termsinput4'); // Arabic 2
 
-    // Hide elements if conditions are met
-    if (plotno1Input.value.trim() === '') {
-      plotno1Input.style.display = 'none';
-      clearButton5.style.display = 'none';
-      mulk.textContent = '';
-    } else {
-      plotno1Input.style.display = 'inline-block';
-      clearButton5.style.display = 'inline-block';
-      mulk.style.display = 'inline-block';
+    const englishChecked = checkbox1.checked && checkbox2.checked;
+    const arabicChecked = checkbox3.checked && checkbox4.checked;
+
+    if (!englishChecked && !arabicChecked) {
+      e.preventDefault();
+
+      // You can replace this with a styled popup
+      showWarningPopup(
+        'Please check and agree to the terms and conditions before downloading the PDF.'
+      );
+
+      return;
     }
 
-    // Get the entered name
-    const nameValue = titleSelect.value + ' ' + nameInput.value;
-    const areaValue = areaSearch.value;
-    const plotnoValue = plotnoInput.value;
-    const plotno1Value = plotno1Input.value;
-    const loadValue =
-      loadInput.value + ' ' + kw.textContent + ' ' + kvaSpan.textContent;
+    const spinner = document.getElementById('loading-spinner');
+    spinner.style.display = 'flex'; // Show loading spinner
 
-    // Display the entered name on the page
-    const td2 = document.getElementById('td2');
-    td2.textContent = nameValue; // Replace input with name text
-    td2.style.width = '346px'
-    td2.style.wordWrap = 'break-word';
+    try {
+      // Simulate async task like PDF creation (e.g., 1.5 sec delay)
+      await new Promise((resolve) => setTimeout(resolve, 5000)); //6100
 
-    const td44 = document.getElementById('td44');
-    td44.textContent = areaValue; // Replace input with name text
+      // Your existing PDF logic here...
+      // e.g., generatePDF(); or jsPDF code
 
-    const td45 = document.getElementById('td45');
-    td45.textContent =
-      plotnoValue +
-      ' ' +
-      minha.textContent +
-      ' ' +
-      plotno1Value +
-      ' ' +
-      mulk.textContent; // Replace input with name text
-    td45.style.width = '346px'
-    td45.style.wordWrap = 'break-word';
+      // Get the entered name
+      const nameInput = document.getElementById('name-input');
+      const titleSelect = document.getElementById('title-select');
+      const areaSearch = document.getElementById('area-search');
+      const areaSelect = document.getElementById('area-select');
+      const plotnoInput = document.getElementById('plotNo-input');
+      const plotno1Input = document.getElementById('plotNo1-input');
+      const mulk = document.getElementById('mulk');
+      const minha = document.getElementById('minha');
+      const projectInput = document.getElementById('project-input');
+      const partiesInput = document.getElementById('parties-input');
+      const consultantInput = document.getElementById('consultant-input');
+      const contractorInput = document.getElementById('contractor-input');
+      const elecContractorInput = document.getElementById(
+        'elec-contractor-input'
+      );
+      const td46 = document.getElementById('td46');
+      const td47 = document.getElementById('td47');
+      const td50 = document.getElementById('td50');
+      const td51 = document.getElementById('td51');
+      const td52 = document.getElementById('td52');
+      const td53 = document.getElementById('td53');
+      const td15 = document.getElementById('td15');
+      const td16 = document.getElementById('td16');
+      const loadInput = document.getElementById('load-input');
+      const kw = document.getElementById('kw');
+      const kvaSpan = document.getElementById('kva-span');
+      const clearButton5 = document.getElementById('clear-button5');
+      const sign = document.getElementById('sign');
+      const sign1 = document.getElementById('sign1');
+      const sign2 = document.getElementById('sign2');
 
-    // Ensure font size adjustments are applied
-    const adjustedFontSize = window.getComputedStyle(projectInput).fontSize;
-    td46.textContent = projectInput.value; // Set the value in the table cell
-    td46.style.fontSize = adjustedFontSize; // Apply the adjusted font size
-    td46.style.width = '346px'
-    td46.style.wordWrap = 'break-word';
+      // Hide elements if conditions are met
+      if (plotno1Input.value.trim() === '') {
+        plotno1Input.style.display = 'none';
+        clearButton5.style.display = 'none';
+        mulk.textContent = '';
+      } else {
+        plotno1Input.style.display = 'inline-block';
+        clearButton5.style.display = 'inline-block';
+        mulk.style.display = 'inline-block';
+      }
 
-    td47.textContent = loadValue; // Replace input with name text
-    td47.style.width = '346px'
-    td47.style.wordWrap = 'break-word';
+      // Get the entered name
+      const nameValue = titleSelect.value + ' ' + nameInput.value;
+      const areaValue = areaSearch.value;
+      const plotnoValue = plotnoInput.value;
+      const plotno1Value = plotno1Input.value;
+      const loadValue =
+        loadInput.value + ' ' + kw.textContent + ' ' + kvaSpan.textContent;
 
-    const adjustedFontSize1 = window.getComputedStyle(partiesInput).fontSize;
-    td50.textContent = partiesInput.value; // Set the value in the table cell
-    td50.style.fontSize = adjustedFontSize1; // Apply the adjusted font size
-    td50.style.width = '346px'
+      // Display the entered name on the page
+      const td2 = document.getElementById('td2');
+      td2.textContent = nameValue; // Replace input with name text
+      td2.style.width = '346px';
+      td2.style.wordWrap = 'break-word';
 
-    const adjustedFontSize2 = window.getComputedStyle(consultantInput).fontSize;
-    td51.textContent = consultantInput.value; // Set the value in the table cell
-    td51.style.fontSize = adjustedFontSize2; // Apply the adjusted font size
-    td51.style.width = '346px'
+      const td44 = document.getElementById('td44');
+      td44.textContent = areaValue; // Replace input with name text
 
-    const adjustedFontSize3 = window.getComputedStyle(contractorInput).fontSize;
-    td52.textContent = contractorInput.value; // Set the value in the table cell
-    td52.style.fontSize = adjustedFontSize3; // Apply the adjusted font size
-    td52.style.width = '346px'
+      const td45 = document.getElementById('td45');
+      td45.textContent =
+        plotnoValue +
+        ' ' +
+        minha.textContent +
+        ' ' +
+        plotno1Value +
+        ' ' +
+        mulk.textContent; // Replace input with name text
+      td45.style.width = '346px';
+      td45.style.wordWrap = 'break-word';
 
-    const adjustedFontSize4 =
-      window.getComputedStyle(elecContractorInput).fontSize;
-    td53.textContent = elecContractorInput.value; // Set the value in the table cell
-    td53.style.fontSize = adjustedFontSize4; // Apply the adjusted font size
-    td53.style.width = '346px'
+      // Ensure font size adjustments are applied
+      const adjustedFontSize = window.getComputedStyle(projectInput).fontSize;
+      td46.textContent = projectInput.value; // Set the value in the table cell
+      td46.style.fontSize = adjustedFontSize; // Apply the adjusted font size
+      // td46.style.width = '346px';
+      // td46.style.wordWrap = 'break-word';
+      td46.style.position = 'center'; // Center-align text
+      td46.style.width = '312px'; // Set fixed width
+      td46.style.wordBreak = 'break-word'; // Enable text wrapping
+      td46.style.overflow = 'hidden'; // Hide overflowing text
+      td46.style.padding = '2px 3px 0.5px 7px';
+      // tdElement.style.fontSize = '11px';
 
-    nameInput.style.display = 'none'; // Hide the input field
-    titleSelect.style.display = 'none'; // Hide the dropdown
-    areaSearch.style.display = 'none'; // Hide the area-search input box
-    areaSelect.style.display = 'none'; // Hide the area-select dropdown
-    plotnoInput.style.display = 'none'; // Hide the area-search input box
-    plotno1Input.style.display = 'none'; // Hide the area-search input box
-    projectInput.style.display = 'none'; // Hide the area-search input box
-    partiesInput.style.display = 'none'; // Hide the area-search input box
-    consultantInput.style.display = 'none'; // Hide the area-search input box
-    contractorInput.style.display = 'none'; // Hide the area-search input box
-    elecContractorInput.style.display = 'none'; // Hide the area-search input box
+      td15.style.width = '107px'; // Set fixed width
+      td15.style.padding = '26px 5px 3px 26.5px';
+      td15.style.fontSize = '11.5px';
 
-    // Define the specific td elements to modify
-  const specificTdIds = ['td2', 'td44', 'td45', 'td46', 'td47', 'td4', 'td50', 'td51', 'td52', 'td53'];
+      td16.style.padding = '0px 18px 3px 5px';
 
-  // Apply styles to center-align and set fixed width
-  specificTdIds.forEach((id) => {
-    const tdElement = document.getElementById(id);
-    if (tdElement) {
-      tdElement.style.position = 'center'; // Center-align text
-      tdElement.style.width = '315px'; // Set fixed width
-      tdElement.style.wordBreak = 'break-word'; // Enable text wrapping
-      tdElement.style.overflow = 'hidden'; // Hide overflowing text
+      td47.textContent = loadValue; // Replace input with name text
+      td47.style.width = '346px';
+      td47.style.wordWrap = 'break-word';
+
+      sign.style.marginTop = '20px';
+
+      sign1.style.marginTop = '3px';
+      sign1.style.marginBottom = '28px';
+      sign1.style.border = 'none';
+      sign1.style.boxShadow = 'inset 0 -3px 0 black'; /* bottom */
+
+      sign2.style.position = 'absolute';
+      sign2.style.display = 'flex';
+      sign2.style.top = '478.5px';
+
+      // const adjustedFontSize1 = window.getComputedStyle(partiesInput).fontSize;
+      td50.textContent = partiesInput.value; // Set the value in the table cell
+      // td50.style.fontSize = adjustedFontSize1; // Apply the adjusted font size
+      td50.style.width = '346px';
+
+      const adjustedFontSize2 =
+        window.getComputedStyle(consultantInput).fontSize;
+      td51.textContent = consultantInput.value; // Set the value in the table cell
+      td51.style.fontSize = adjustedFontSize2; // Apply the adjusted font size
+      td51.style.width = '346px';
+
+      const adjustedFontSize3 =
+        window.getComputedStyle(contractorInput).fontSize;
+      td52.textContent = contractorInput.value; // Set the value in the table cell
+      td52.style.fontSize = adjustedFontSize3; // Apply the adjusted font size
+      td52.style.width = '346px';
+
+      const adjustedFontSize4 =
+        window.getComputedStyle(elecContractorInput).fontSize;
+      td53.textContent = elecContractorInput.value; // Set the value in the table cell
+      td53.style.fontSize = adjustedFontSize4; // Apply the adjusted font size
+      td53.style.width = '346px';
+
+      nameInput.style.display = 'none'; // Hide the input field
+      titleSelect.style.display = 'none'; // Hide the dropdown
+      areaSearch.style.display = 'none'; // Hide the area-search input box
+      areaSelect.style.display = 'none'; // Hide the area-select dropdown
+      plotnoInput.style.display = 'none'; // Hide the area-search input box
+      plotno1Input.style.display = 'none'; // Hide the area-search input box
+      projectInput.style.display = 'none'; // Hide the area-search input box
+      partiesInput.style.display = 'none'; // Hide the area-search input box
+      consultantInput.style.display = 'none'; // Hide the area-search input box
+      contractorInput.style.display = 'none'; // Hide the area-search input box
+      elecContractorInput.style.display = 'none'; // Hide the area-search input box
+
+      // Define the specific td elements to modify
+      const specificTdIds2 = [
+        'td31',
+        'td32',
+        'td33',
+        'td99',
+        'td34',
+        'td5',
+        'td35',
+        'td36',
+        'td37',
+        'td38',
+      ];
+
+      // Apply styles to center-align and set fixed width
+      specificTdIds2.forEach((id) => {
+        const tdElement2 = document.getElementById(id);
+        if (tdElement2) {
+          // tdElement2.style.position = 'center'; // Center-align text
+          tdElement2.style.width = '142px'; // Set fixed width
+          tdElement2.style.padding = '3.1px 3px 6.4px 6px';
+          tdElement2.style.fontSize = '11.5px';
+          tdElement2.style.fontFamily = " 'Times New Roman', Times, serif ";
+          tdElement2.style.letterSpacing = '0.1px';
+          // tdElement2.style.paddingBottom = '2px 3px 60px 5px'; // Set fixed width
+          // tdElement2.style.wordBreak = 'break-word'; // Enable text wrapping
+          // tdElement2.style.overflow = 'hidden'; // Hide overflowing text
+        }
+      });
+
+      // Define the specific td elements to modify
+      const specificTdIds = [
+        'td2',
+        'td44',
+        'td45',
+        // 'td46',
+        'td47',
+        'td4',
+        'td50',
+        'td51',
+        'td52',
+        'td53',
+      ];
+
+      // Apply styles to center-align and set fixed width
+      specificTdIds.forEach((id) => {
+        const tdElement = document.getElementById(id);
+        if (tdElement) {
+          tdElement.style.position = 'center'; // Center-align text
+          tdElement.style.width = '312px'; // Set fixed width
+          tdElement.style.wordBreak = 'break-word'; // Enable text wrapping
+          tdElement.style.overflow = 'hidden'; // Hide overflowing text
+          tdElement.style.padding = '2.5px 3px 6px 7.2px';
+          tdElement.style.fontSize = '11px';
+        }
+      });
+
+      // Define the specific td elements to modify
+      const specificTdIds1 = [
+        'td3',
+        'td11',
+        'td12',
+        'td13',
+        'td14',
+        // 'td15',
+        // 'td16',
+        'td17',
+        'td18',
+        'td79',
+      ];
+
+      // Apply styles to center-align and set fixed width
+      specificTdIds1.forEach((id) => {
+        const tdElement1 = document.getElementById(id);
+        if (tdElement1) {
+          // tdElement1.style.position = 'center'; // Center-align text
+          tdElement1.style.width = '107px'; // Set fixed width
+          tdElement1.style.padding = '2.1px 6px 6.4px 6px';
+          tdElement1.style.fontSize = '11.5px';
+          // tdElement1.style.boxShadow = 'inset -1.5px 0 0 black';
+        }
+      });
+
+      // Define the specific td elements to modify
+      const specificTdIds5 = [
+        'span131',
+        'span132',
+        'span133',
+        'span134',
+        'span135',
+        'span136',
+        'span137',
+        'span138',
+        'span139',
+        'span140',
+      ];
+
+      // Apply styles to center-align and set fixed width
+      specificTdIds5.forEach((id) => {
+        const span132 = document.getElementById(id);
+        if (span132) {
+          span132.style.position = 'relative';
+          span132.style.bottom = '2px';
+        }
+      });
+
+      // const span132 = document.getElementById('span132');
+
+      // Dynamically import jsPDF
+      const { jsPDF } = window.jspdf;
+
+      // Select the sections for each page
+      const page1 = document.querySelector('#page1');
+      const page2 = document.querySelector('#page2');
+
+      // Apply a border to all table and td elements
+      document.querySelectorAll('table').forEach((element) => {
+        element.style.border = 'none';
+        element.style.boxShadow = `inset 0 3.8px 0 black,           /* top    */
+                                 inset -3.5px 0 0 black,      /* right  */
+                                 inset 0 0px 0 black,         /* bottom */
+                                 inset 3.8px 0 0 black      /* left   */`;
+        // element.style.borderLeft = '0.1px solid black';
+      });
+
+      // Apply top and right borders only to all <th> elements
+      document.querySelectorAll('th').forEach((th) => {
+        th.style.border = 'none'; // Clear existing borders
+        th.style.boxShadow = 'inset 0 -3px 0 black'; /* bottom */
+        // th.style.borderTop = '0.1px solid black';
+        // th.style.borderRight = '0.1px solid black'; // Add right border
+      });
+
+      // Apply top and right borders only to all <td> elements
+      document.querySelectorAll('td').forEach((td) => {
+        td.style.border = 'none'; // Clear existing borders
+        td.style.boxShadow = 'inset -1px -1px 0px 0.2px black';
+        // td.style.borderTop = '0.1px solid black'; // Add top border
+        // td.style.borderRight = '0.1px solid black'; // Add right border
+      });
+
+      // Apply top and right borders only to all <td> elements
+      document.querySelectorAll('#table2').forEach((table2) => {
+        table2.style.border = 'none'; // Clear existing borders
+        table2.style.boxShadow = `inset 0 0px 0 black,           /* top    */
+                                 inset -4px 0 0 black,      /* right  */
+                                 inset 0 -3.8px 0 black,         /* bottom */
+                                 inset 4px 0 0 black      /* left   */`;
+      });
+
+      // Apply top and right borders only to all <td> elements
+      document.querySelectorAll('#table3').forEach((table3) => {
+        table3.style.border = 'none'; // Clear existing borders
+        table3.style.borderLeft = '0.1px solid black'; // Add top border
+        table3.style.borderBottom = '0.1px solid black';
+      });
+
+      // Apply top and right borders only to all <td> elements
+      document.querySelectorAll('#line1, #line2').forEach((line) => {
+        line.style.border = 'none'; // Clear existing borders
+        line.style.borderBottom = '0.01px solid #a09d9d';
+      });
+
+      // Apply top and right borders only to all <td> elements
+      document.querySelectorAll('#terms').forEach((terms) => {
+        terms.style.textDecoration = 'none';
+        terms.style.borderBottom = '0.1px solid black';
+        terms.style.paddingBottom = '1px';
+      });
+
+      // Apply top and right borders only to all <td> elements
+      document.querySelectorAll('#terms1').forEach((terms1) => {
+        terms1.style.textDecoration = 'none';
+        terms1.style.borderBottom = '0.1px solid black';
+        terms1.style.paddingBottom = '0px';
+      });
+
+      // Create a new jsPDF instance
+      const pdf = new jsPDF({
+        unit: 'in',
+        format: 'a4',
+        orientation: 'portrait',
+      });
+
+      // Render page 1
+      const canvas1 = await html2canvas(page1, {
+        scale: 6,
+        useCORS: true, // Handle cross-origin images
+        dir: 'rtl', // Support RTL
+      });
+      const imgData1 = canvas1.toDataURL('image/jpeg', 4.0);
+      const pageWidth = pdf.internal.pageSize.getWidth();
+      const pageHeight = pdf.internal.pageSize.getHeight();
+      pdf.addImage(imgData1, 'JPEG', 0, 0, pageWidth, pageHeight);
+
+      // Add a new page and render page 2
+      pdf.addPage();
+      const canvas2 = await html2canvas(page2, {
+        scale: 6,
+        useCORS: true,
+      });
+      const imgData2 = canvas2.toDataURL('image/jpeg', 4.0);
+      pdf.addImage(imgData2, 'JPEG', 0, 0, pageWidth, pageHeight);
+
+      // Save the PDF
+      const save =
+        plotnoValue + '_01.' + ' ' + 'SEWA Declaration & Commitment Form';
+
+      pdf.save(save + '.pdf');
+
+      // Add page refresh
+      location.reload();
+    } catch (error) {
+      console.error('Error generating PDF:', error);
+    } finally {
+      spinner.style.display = 'none'; // Hide loading spinner
     }
+    localStorage.setItem('pdfDownloaded', 'true');
+
+    // ===== Replace this with your actual PDF generation logic =====
+    console.log('PDF would be generated here.');
+
+    await new Promise((resolve) => setTimeout(resolve, 15000)); // Extra delay before popup
+    showSuccessPopup();
   });
-  
-  // Define the specific td elements to modify
-const specificTdIds1 = ['td3', 'td11', 'td12', 'td13', 'td14', 'td15', 'td16', 'td17', 'td18', 'td79'];
 
-// Apply styles to center-align and set fixed width
-specificTdIds1.forEach((id) => {
-  const tdElement1 = document.getElementById(id);
-  if (tdElement1) {
-    // tdElement1.style.position = 'center'; // Center-align text
-    tdElement1.style.width = '105px'; // Set fixed width
-    // tdElement1.style.wordBreak = 'break-word'; // Enable text wrapping
-    // tdElement1.style.overflow = 'hidden'; // Hide overflowing text
+document.getElementById('toggle-view').addEventListener('click', function () {
+  const main = document.getElementById('main21');
+  const icon = document.getElementById('view-icon');
+
+  if (main.style.flexDirection === 'column') {
+    main.style.flexDirection = 'row';
+    icon.textContent = '📄 Vertical'; // List view
+  } else {
+    main.style.flexDirection = 'column';
+    icon.textContent = '📑 Horizontal'; // Row/grid view
   }
 });
 
-// Define the specific td elements to modify
-const specificTdIds2 = ['td31', 'td32', 'td33', 'td99', 'td34', 'td5', 'td35', 'td36', 'td37', 'td38'];
+function showSuccessPopup() {
+  const popup = document.createElement('div');
+  popup.innerHTML = `
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <span>📥 Your PDF has been downloaded successfully. Thank you for your patience.</span>
+        <button id="close-popup" style="
+          background: transparent;
+          border: none;
+          color: white;
+          font-size: 18px;
+          font-weight: bold;
+          margin-left: 15px;
+          cursor: pointer;
+        ">&times;</button>
+      </div>
+    `;
 
-// Apply styles to center-align and set fixed width
-specificTdIds2.forEach((id) => {
-  const tdElement2 = document.getElementById(id);
-  if (tdElement2) {
-    // tdElement2.style.position = 'center'; // Center-align text
-    tdElement2.style.width = '115px'; // Set fixed width
-    // tdElement2.style.wordBreak = 'break-word'; // Enable text wrapping
-    // tdElement2.style.overflow = 'hidden'; // Hide overflowing text
-  }
+  Object.assign(popup.style, {
+    position: 'fixed',
+    bottom: '80px',
+    left: '50%',
+    fontFamily: 'Nunito',
+    transform: 'translateX(-50%)',
+    padding: '18px 30px',
+    backgroundColor: 'black',
+    color: '#fff',
+    borderRadius: '12px',
+    boxShadow: '0 6px 20px rgba(0,0,0,0.2)',
+    fontSize: '16px',
+    zIndex: '10000',
+    opacity: '0',
+    transition: 'opacity 0.4s ease, transform 0.3s ease',
+    maxWidth: '90%',
+    width: 'fit-content',
+  });
+
+  document.body.appendChild(popup);
+
+  // Fade in
+  setTimeout(() => {
+    popup.style.opacity = '1';
+    popup.style.transform = 'translateX(-50%) translateY(0)';
+  }, 10);
+
+  // Close button
+  document.getElementById('close-popup').onclick = () => {
+    popup.style.opacity = '0';
+    setTimeout(() => {
+      popup.remove();
+    }, 400);
+  };
+
+  // Auto close after 5 seconds
+  setTimeout(() => {
+    if (document.body.contains(popup)) {
+      popup.style.opacity = '0';
+      setTimeout(() => {
+        popup.remove();
+      }, 400);
+    }
+  }, 5000);
+}
+
+function showWarningPopup(message) {
+  const popup = document.createElement('div');
+  popup.innerHTML = `
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <span>⚠️ ${message}</span>
+      <button id="close-warning" style="
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        margin-left: 15px;
+        cursor: pointer;
+      ">&times;</button>
+    </div>
+  `;
+
+  Object.assign(popup.style, {
+    position: 'fixed',
+    bottom: '80px',
+    left: '50%',
+    fontFamily: 'Nunito',
+    transform: 'translateX(-50%)',
+    padding: '18px 30px',
+    backgroundColor: 'black', // red
+    color: '#fff',
+    borderRadius: '12px',
+    boxShadow: '0 6px 20px rgba(0,0,0,0.2)',
+    fontSize: '16px',
+    zIndex: '10000',
+    opacity: '0',
+    transition: 'opacity 0.4s ease, transform 0.3s ease',
+    maxWidth: '90%',
+    width: 'fit-content',
+  });
+
+  document.body.appendChild(popup);
+
+  // Fade in
+  setTimeout(() => {
+    popup.style.opacity = '1';
+    popup.style.transform = 'translateX(-50%) translateY(0)';
+  }, 10);
+
+  // Close button
+  document.getElementById('close-warning').onclick = () => {
+    popup.style.opacity = '0';
+    setTimeout(() => {
+      popup.remove();
+    }, 400);
+  };
+
+  // Auto-remove after 5 seconds
+  setTimeout(() => {
+    if (document.body.contains(popup)) {
+      popup.style.opacity = '0';
+      setTimeout(() => {
+        popup.remove();
+      }, 400);
+    }
+  }, 5000);
+}
+
+function showReminderPopup() {
+  const popup = document.getElementById('reminder-popup');
+  const sound = document.getElementById('reminder-sound');
+  if (sound) sound.volume = 0.4, sound.play();  // Gentle volume
+
+  // Slide in
+  popup.style.top = '50px';
+
+  // Auto-hide after 3 seconds
+  setTimeout(() => {
+    popup.style.top = '-100px';
+  }, 5000);
+}
+
+// Close button logic
+document.getElementById('reminder-close').addEventListener('click', () => {
+  const popup = document.getElementById('reminder-popup');
+  popup.style.top = '-100px';
 });
 
-    // Dynamically import jsPDF
-    const { jsPDF } = window.jspdf;
+// Initial delay (optional)
+setTimeout(showReminderPopup, 5000); // first reminder after 10s
 
-    // Select the sections for each page
-    const page1 = document.querySelector('#page1');
-    const page2 = document.querySelector('#page2');
+// Repeat every 20 minutes (1,200,000 ms)
+setInterval(showReminderPopup, 600000);
 
-    // Apply a border to all table and td elements
-    document.querySelectorAll('table').forEach((element) => {
-      element.style.border = 'none';
-      element.style.borderLeft = '0.3px solid black';
-    });
 
-    // Apply top and right borders only to all <th> elements
-    document.querySelectorAll('th').forEach((th) => {
-      th.style.border = 'none'; // Clear existing borders
-      th.style.borderTop = '0.3px solid black';
-      th.style.borderRight = '0.3px solid black'; // Add right border
-    });
-
-    // Apply top and right borders only to all <td> elements
-    document.querySelectorAll('td').forEach((td) => {
-      td.style.border = 'none'; // Clear existing borders
-      td.style.borderTop = '0.3px solid black'; // Add top border
-      td.style.borderRight = '0.3px solid black'; // Add right border
-    });
-
-    // Apply top and right borders only to all <td> elements
-    document.querySelectorAll('#table2').forEach((table2) => {
-      table2.style.border = 'none'; // Clear existing borders
-      table2.style.borderLeft = '0.3px solid black'; // Add top border
-      table2.style.borderBottom = '0.3px solid black';
-    });
-
-    // Apply top and right borders only to all <td> elements
-    document.querySelectorAll('#table3').forEach((table3) => {
-      table3.style.border = 'none'; // Clear existing borders
-      table3.style.borderLeft = '0.3px solid black'; // Add top border
-      table3.style.borderBottom = '0.3px solid black';
-    });
-
-    // Apply top and right borders only to all <td> elements
-    document.querySelectorAll('#line1, #line2').forEach((line) => {
-      line.style.border = 'none'; // Clear existing borders
-      line.style.borderBottom = '0.01px solid #a09d9d';
-    });
-
-    // Apply top and right borders only to all <td> elements
-    document.querySelectorAll('#terms').forEach((terms) => {
-      terms.style.textDecoration = 'none';
-      terms.style.borderBottom = '0.3px solid black';
-      terms.style.paddingBottom = '1px';
-    });
-
-    // Apply top and right borders only to all <td> elements
-    document.querySelectorAll('#terms1').forEach((terms1) => {
-      terms1.style.textDecoration = 'none';
-      terms1.style.borderBottom = '0.3px solid black';
-      terms1.style.paddingBottom = '0px';
-    });
-
-    // Create a new jsPDF instance
-    const pdf = new jsPDF({
-      unit: 'in',
-      format: 'a4',
-      orientation: 'portrait',
-    });
-
-    // Render page 1
-    const canvas1 = await html2canvas(page1, {
-      scale: 6,
-      useCORS: true, // Handle cross-origin images
-      dir: 'rtl', // Support RTL
-    });
-    const imgData1 = canvas1.toDataURL('image/jpeg', 4.0);
-    const pageWidth = pdf.internal.pageSize.getWidth();
-    const pageHeight = pdf.internal.pageSize.getHeight();
-    pdf.addImage(imgData1, 'JPEG', 0, 0, pageWidth, pageHeight);
-
-    // Add a new page and render page 2
-    pdf.addPage();
-    const canvas2 = await html2canvas(page2, {
-      scale: 6,
-      useCORS: true,
-    });
-    const imgData2 = canvas2.toDataURL('image/jpeg', 4.0);
-    pdf.addImage(imgData2, 'JPEG', 0, 0, pageWidth, pageHeight);
-
-    // Save the PDF
-    const save = plotnoValue + '_01.' + ' ' + 'SEWA Declaration & Commitment Form';
-    
-    pdf.save(save + '.pdf');
-
-    // Add page refresh
-    location.reload();
-  });
+document.addEventListener('keydown', function (event) {
+  // Ctrl + Shift + D
+  if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === 'd') {
+    event.preventDefault(); // Prevent browser default behavior
+    document.getElementById('download-pdf').click(); // Trigger download
+  }
+});
 
 document
   .getElementById('clear-button')
@@ -346,7 +675,9 @@ document
 document
   .getElementById('clear-button9')
   .addEventListener('click', function (event) {
-    const elecContractorInput = document.getElementById('elec-contractor-input');
+    const elecContractorInput = document.getElementById(
+      'elec-contractor-input'
+    );
     elecContractorInput.value = ''; // Clear the input value
     elecContractorInput.focus(); // Optionally refocus the input field
     elecContractorInput.style.fontSize = '9px'; // Reset to the default font size as per the CSS
@@ -466,6 +797,7 @@ const areas = [
   'Al Sajaa Industrial',
   'Al Sajaa Industrial (Al Jaleel)',
   'Al Sajaa',
+  'Al Sajaa, Al Saniyya',
   'Al Saniyya',
   'Al Sajaah S',
   'Al Shaahba',
@@ -951,13 +1283,13 @@ function adjustProjectInputFontSize() {
     projectInput.scrollWidth > projectInput.clientWidth &&
     fontSize > minFontSize
   ) {
-    fontSize -= 0.01; // Reduce font size smoothly in small steps
+    fontSize -= 0.021; // Reduce font size smoothly in small steps
     projectInput.style.fontSize = `${fontSize}px`;
   }
 
   // Increase the font size incrementally if there is extra space
   if (projectInput.scrollWidth <= projectInput.clientWidth && fontSize < 9) {
-    fontSize += 0.01; // Increase font size smoothly in small steps
+    fontSize += 0.021; // Increase font size smoothly in small steps
     projectInput.style.fontSize = `${fontSize}px`;
   }
 }
@@ -983,7 +1315,7 @@ function handlePasteEvent(event) {
       if (textLength > threshold) {
         // Calculate how much to reduce the font size
         const excessCharacters = textLength - threshold; // Number of extra characters
-        const fontSizeReduction = excessCharacters * 0.01; // Reduce 0.01px per character
+        const fontSizeReduction = excessCharacters * 0.021; // Reduce 0.021px per character
 
         fontSize = Math.max(minFontSize, fontSize - fontSizeReduction); // Ensure font size doesn't go below minFontSize
         projectInput.style.fontSize = `${fontSize}px`;
@@ -1211,7 +1543,9 @@ function adjustElecContractorInputFontSize() {
   const td53 = document.getElementById('td53');
 
   // Get the initial font size
-  let fontSize = parseFloat(window.getComputedStyle(elecContractorInput).fontSize);
+  let fontSize = parseFloat(
+    window.getComputedStyle(elecContractorInput).fontSize
+  );
 
   // Define the minimum font size
   const minFontSize = 5;
@@ -1237,7 +1571,9 @@ function adjustElecContractorInputFontSize() {
 
 function handlePasteEvent4(event) {
   const elecContractorInput = document.getElementById('elec-contractor-input');
-  let fontSize = parseFloat(window.getComputedStyle(elecContractorInput).fontSize);
+  let fontSize = parseFloat(
+    window.getComputedStyle(elecContractorInput).fontSize
+  );
   const minFontSize = 5; // Define the minimum font size
   const threshold = 66; // Number of characters before reducing font size
 
@@ -1269,7 +1605,10 @@ function handlePasteEvent4(event) {
 
 // Attach the function to dynamically adjust font size on input or paste
 const elecContractorInput = document.getElementById('elec-contractor-input');
-elecContractorInput.addEventListener('input', adjustElecContractorInputFontSize); // For typing
+elecContractorInput.addEventListener(
+  'input',
+  adjustElecContractorInputFontSize
+); // For typing
 elecContractorInput.addEventListener('paste', handlePasteEvent4); // For pasting
 
 // Initialize font size adjustment for any pre-filled values

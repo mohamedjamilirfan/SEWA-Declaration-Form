@@ -9,26 +9,31 @@
 }
 
 @font-face {
-  font-family: English;
+  font-family: 'Times New Roman', Times, serif;
   src: url(Font\ Family/Times\ New\ Roman\ Bold.ttf);
 }
 
 @font-face {
-  font-family: EnglishRegular;
+  font-family: 'Times New Roman', Times, serif;
   src: url(Font\ Family/Times\ New\ Roman\ Regular.ttf);
 }
 
 @font-face {
   font-family: Darkmode;
-  src: url(Font\ Family/Darkmode-Regular.ttf);
+  src: url(Font\ Family/Darkmode-Regular.OTF);
+}
+
+@font-face {
+  font-family: Nunito;
+  src: url(Font\ Family/Nunito-Regular.ttf);
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: English;
-  font-size: 10.5px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 11px;
 }
 
 body {
@@ -41,16 +46,26 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   gap: 15px;
-  margin: 15px auto;
+  /* margin: 15px auto; */
+  margin-top: 20px;
   max-width: 100%;
-  width: 450px;
+  /* width: 450px; */
   height: auto;
 }
 
+#section21 {
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #page1 {
-  height: 800px;
-  width: 600px;
+  height: 870px;
+  width: 640px;
   background-color: white;
   padding: 0px 15px 15px 15px;
   display: flex;
@@ -61,16 +76,17 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 94%;
+  width: 558.5px;
+  margin-right: 0.5px;
   height: auto;
   background-color: transparent;
   position: relative;
 }
 
 #pdf-logo1 {
-  height: 125px;
-  width: 133px;
-  margin-left: 4px;
+  height: 138px;
+  width: 142px;
+  margin-left: 5px;
   /* margin: 0px auto; */
   background-color: transparent;
 }
@@ -82,14 +98,16 @@ main {
 }
 
 #tr1 {
-  padding: 2px 10px 5px 10px;
-  font-size: 10.9px;
-  font-weight: 500;
+  padding: 3.3px 10px 6.5px 10px;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.1px;
 }
 
 #tr1 span {
-  font-size: 13px;
+  font-size: 14.5px;
   font-weight: 500;
+  letter-spacing: normal;
 }
 
 .arabic {
@@ -97,7 +115,7 @@ main {
   font-weight: 500;
   text-align: right;
   direction: rtl;
-  font-size: 12px;
+  font-size: 11px;
 }
 
 #td2 {
@@ -110,7 +128,7 @@ main {
   border: 0.5px solid black;
   font-family: EnglishRegular;
   font-weight: 500;
-  font-size: 9px;
+  font-size: 10px;
   width: 38px;
   padding: 0;
   border-radius: 2px;
@@ -129,7 +147,7 @@ main {
   border: 0.5px solid black;
   font-family: EnglishRegular;
   font-weight: 500;
-  font-size: 9px;
+  font-size: 10px;
   width: 260px;
   padding: 1px 1px 1px 3px;
   border-radius: 2px;
@@ -153,8 +171,8 @@ main {
   border: 0.5px solid black;
   font-family: EnglishRegular;
   font-weight: 500;
-  font-size: 9px;
-  width: 100px;
+  font-size: 10px;
+  width: 110px;
   padding: 1px 1px 1px 3px;
   border-radius: 2px;
 }
@@ -176,7 +194,7 @@ input[type='text'] {
   border: 0.5px solid black;
   font-family: EnglishRegular;
   font-weight: 500;
-  font-size: 9px;
+  font-size: 10px;
   width: 300px;
   padding: 1px 1px 1px 3px;
   border-radius: 2px;
@@ -196,7 +214,7 @@ input[type='text'] {
   border: 0.5px solid black;
   font-family: EnglishRegular;
   font-weight: 500;
-  font-size: 9px;
+  font-size: 10px;
   width: 100%;
   padding: 1px 1px 1px 3px;
   border-radius: 2px;
@@ -219,7 +237,7 @@ input[type='text'] {
   border: 0.5px solid black;
   font-family: EnglishRegular;
   font-weight: 500;
-  font-size: 9px;
+  font-size: 10px;
   width: 300px;
   padding: 1px 1px 1px 3px;
   border-radius: 2px;
@@ -242,7 +260,7 @@ input[type='text'] {
   border: 0.5px solid black;
   font-family: EnglishRegular;
   font-weight: 500;
-  font-size: 9px;
+  font-size: 10px;
   width: 300px;
   padding: 1px 1px 1px 3px;
   border-radius: 2px;
@@ -265,7 +283,7 @@ input[type='text'] {
   border: 0.5px solid black;
   font-family: EnglishRegular;
   font-weight: 500;
-  font-size: 9px;
+  font-size: 10px;
   width: 300px;
   padding: 1px 1px 1px 3px;
   border-radius: 2px;
@@ -282,14 +300,13 @@ input[type='text'] {
   width: 312px;
 }
 
-
 #elec-contractor-input {
   border: none;
   outline: none;
   border: 0.5px solid black;
   font-family: EnglishRegular;
   font-weight: 500;
-  font-size: 9px;
+  font-size: 10px;
   width: 300px;
   padding: 1px 1px 1px 3px;
   border-radius: 2px;
@@ -353,14 +370,19 @@ input[type='text'] {
   cursor: pointer;
 }
 
+#area-search-div {
+  position: relative;
+  width: 200px;
+}
+
 #area-search {
   border: none;
   outline: none;
   border: 0.5px solid black;
   font-family: EnglishRegular;
   font-weight: 500;
-  font-size: 9px;
-  width: 100px;
+  font-size: 10px;
+  width: 100%;
   padding: 1px 0px 1px 3px;
   border-radius: 2px;
 }
@@ -382,7 +404,7 @@ input[type='text'] {
 }
 
 #area-select option {
-  font-size: 9px;
+  font-size: 10px;
   margin-bottom: 3px;
   cursor: pointer;
 }
@@ -392,15 +414,17 @@ input[type='text'] {
 }
 
 td {
-  padding: 3px 3px 3px 5px;
+  padding: 2px 3px 6.5px 6px;
   border: solid black 0.5px;
+  /* border: none; */
   vertical-align: middle;
 }
 
 .font {
   font-family: EnglishRegular;
   font-weight: 500;
-  font-size: 10px;
+  font-size: 11px;
+  text-align: justify;
 }
 
 .td11 {
@@ -458,20 +482,20 @@ td {
 
 .custom-checkbox .checkmark {
   display: inline-block;
-  width: 10px;
-  height: 8px;
+  width: 13px;
+  height: 10px;
   border: 0.8px solid black;
   position: relative;
-  top: 0.5px;
+  top: 1.5px;
 }
 
 .custom-checkbox .checkmark img {
   position: relative;
-  bottom: 2.5px;
-  left: 0.7px;
+  bottom: 3.4px;
+  left: 1px;
   display: none; /* Hide by default */
-  width: 8px; /* Adjust image size to fit the box */
-  height: 8px;
+  width: 10.5px; /* Adjust image size to fit the box */
+  height: 10.5px;
 }
 
 .custom-checkbox input:checked + .checkmark img {
@@ -485,7 +509,12 @@ table {
 }
 
 #td6 {
-  width: 50%;
+  width: 47.3%;
+  padding: 0px 5px 3px 5px;
+}
+
+#td61 {
+  width: 47%;
   padding: 3px 5px 3px 5px;
 }
 
@@ -497,7 +526,8 @@ table {
 
 #ul3 {
   margin-top: 5px;
-  padding-left: 10px;
+  padding-left: 15px;
+  margin-bottom: 8px;
 }
 
 #ul3 li {
@@ -518,6 +548,36 @@ table {
 
 #ul3 #li1 {
   text-align: justify;
+  word-spacing: 2.44px;
+  letter-spacing: 0.1px;
+}
+
+#ul99 {
+  margin-top: 5px;
+  padding-left: 15px;
+  margin-bottom: 7px;
+}
+
+#ul99 li {
+  text-align: left;
+  line-height: 15px;
+  list-style-type: none;
+  list-style-position: outside;
+  padding-left: 5px;
+}
+
+#ul99 li::before {
+  content: '■';
+  font-size: 7px;
+  position: absolute;
+  left: -14px;
+  color: black;
+}
+
+#ul99 #li1 {
+  text-align: justify;
+  word-spacing: 2.44px;
+  letter-spacing: 0.1px;
 }
 
 #ul4 {
@@ -536,12 +596,12 @@ table {
 
 #td7 {
   width: 50%;
-  padding: 4px 5px 3px 4px;
+  padding: 3px 5px 3px 4px;
   vertical-align: top;
 }
 
 #td7 h4 {
-  width: 25%;
+  width: 21.3%;
   float: right;
   text-decoration: underline;
   text-decoration-thickness: 1px;
@@ -549,20 +609,28 @@ table {
 }
 
 #ul5 {
-  margin-top: 16px;
+  margin-top: 13px;
   margin-bottom: 3px;
-  padding-right: 10px;
+  padding-right: 22px;
 }
 
 #ul5 li {
   text-align: justify; /* Justify the text */
   direction: rtl; /* Set the direction to right-to-left for right alignment */
   line-height: 16.5px;
-  font-size: 11.5px;
+  font-size: 11px;
   font-family: ArabicRegular;
   font-weight: 500;
   padding-right: 5px;
   position: relative;
+  word-spacing: 0.5px;
+}
+
+#p1 {
+  padding-left: 5px;
+  line-height: 15px;
+  position: relative;
+  top: -9px;
 }
 
 #ul5 li::before {
@@ -570,6 +638,7 @@ table {
   font-size: 7px;
   position: absolute;
   right: -8px; /* Align bullet to the right edge */
+  top: -2px;
   color: black; /* Change to preferred color */
 }
 
@@ -585,7 +654,7 @@ table {
 #li5::after {
   content: '.';
   position: relative;
-  right: 0px;
+  right: -3.4px;
   font-size: 16px;
 }
 
@@ -596,7 +665,7 @@ table {
 #li6::after {
   content: '.';
   position: relative;
-  right: 0px;
+  right: -2px;
   font-size: 16px;
 }
 
@@ -613,39 +682,40 @@ table {
 }
 
 #line {
-  border-bottom: 0.5px solid #a09d9d; /* Left border as the vertical line */
+  border-bottom: 0.1px solid #a09d9d; /* Left border as the vertical line */
   height: 35px; /* Height of the line */
-  width: 86%;
+  width: 85%;
 }
 
 #pageno {
-  width: 85%;
+  width: 86.8%;
   text-align: right;
   color: black;
   font-family: EnglishRegular;
-  font-size: 10px;
-  margin-top: 3px;
+  font-size: 11px;
+  margin-top: 1.5px;
 }
 
 #pageno span {
   /* border-left: 1px solid black;
   padding-left: 3px; */
   color: #848484;
-  letter-spacing: 3px;
+  letter-spacing: 3.3px;
 }
 
 #information {
   color: #848484;
   font-family: Darkmode;
-  font-size: 11px;
-  letter-spacing: 2px;
-  margin-top: 13px;
+  font-size: 12px;
+  letter-spacing: 2.2px;
+  margin-top: 17px;
+  margin-left: 13px;
 }
 
 /* sfjgdbfvdjfiuf */
 #page2 {
-  height: 800px;
-  width: 600px;
+  height: 870px;
+  width: 640px;
   background-color: white;
   padding: 0px 15px 15px 15px;
   display: flex;
@@ -656,16 +726,17 @@ table {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 94%;
+  width: 558.5px;
+  margin-right: 0.5px;
   height: auto;
   background-color: transparent;
   position: relative;
 }
 
 #pdf-logo2 {
-  height: 130px;
-  width: 135px;
-  margin: 0px auto;
+  height: 137px;
+  width: 142.5px;
+  margin-left: 6px;
   background-color: transparent;
 }
 
@@ -687,7 +758,7 @@ table {
 }
 
 #div2 {
-  padding-top: 25px;
+  padding-top: 15px;
 }
 
 #div1 span {
@@ -787,20 +858,24 @@ table {
   display: flex;
   flex-direction: row;
   gap: 8px;
+  padding-top: 3px;
 }
 
 #div4 {
-  padding-top: 40px;
+  padding-top: 28px;
+  justify-content: end;
+  padding-bottom: 6px;
 }
 
 #div3 span {
   font-family: ArabicRegular;
   font-size: 11.5px;
   font-weight: 500;
-  line-height: 15px;
+  line-height: 18px;
   text-align: justify;
   direction: rtl;
   vertical-align: top;
+  word-spacing: -0.4px;
 }
 
 #div4 span {
@@ -862,36 +937,36 @@ table {
 }
 
 #sign {
-  font-family: English;
-  font-size: 13.5px;
-  font-weight: 500;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  font-weight: 700;
   width: 100%;
   text-align: center;
 }
 
 #sign #span1 {
-  font-family: English;
-  font-size: 13.5px;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 14px;
   letter-spacing: -1px;
   font-weight: 400;
 }
 
 #sign #span2 {
   font-family: Arabic;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 900;
 }
 
 #sign1 {
   display: flex;
-  width: 60%;
-  height: 45px;
+  width: 58%;
+  height: 35px;
   border-bottom: 1px solid black;
 }
 
 #pageno-container2 {
-  position: relative;
-  bottom: -194px;
+  position: absolute;
+  bottom: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -902,45 +977,368 @@ table {
 }
 
 #line2 {
-  border-bottom: 0.5px solid #a09d9d; /* Left border as the vertical line */
+  border-bottom: 0.1px solid #a09d9d; /* Left border as the vertical line */
   height: 35px; /* Height of the line */
-  width: 86%;
+  width: 85%;
 }
 
 #pageno2 {
-  width: 85%;
+  width: 86.8%;
   text-align: right;
   color: black;
   font-family: EnglishRegular;
-  font-size: 10px;
-  margin-top: 3px;
+  font-size: 11px;
+  margin-top: 1.5px;
 }
 
 #pageno2 span {
   /* border-left: 1px solid black;
   padding-left: 3px; */
   color: #848484;
-  letter-spacing: 3px;
+  letter-spacing: 3.3px;
 }
 
 #information2 {
   color: #848484;
   font-family: Darkmode;
-  font-size: 11px;
-  letter-spacing: 2px;
-  margin-top: 13px;
+  font-size: 12px;
+  letter-spacing: 2.2px;
+  margin-top: 17px;
+  margin-left: 13px;
+}
+
+#loading-spinner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 110px;
+  z-index: 9999;
+}
+
+#loadertext {
+  color: white;
+  font-size: 19px;
+  font-weight: 500;
+  font-family: Nunito;
+  letter-spacing: 0.5px;
+}
+
+.loader {
+  position: relative;
+  width: 120px;
+  height: 55px;
+  background-repeat: no-repeat;
+  background-image: radial-gradient(circle 2.5px, #ff3d00 100%, transparent 0),
+    linear-gradient(#525252 90px, transparent 0),
+    linear-gradient(#ececec 120px, transparent 0),
+    linear-gradient(to right, #eee 10%, #333 10%, #333 90%, #eee 90%);
+
+  background-size: 5px 5px, 90px 10px, 120px 45px, 100px 15px;
+  background-position: 110px 15px, center bottom, center bottom, center 0;
+}
+.loader:before {
+  content: '';
+  width: 70px;
+  background-color: #fff;
+  box-shadow: 0 0 10px #0003;
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+  bottom: calc(100% - 10px);
+  animation: printerPaper 3s ease-in infinite;
+}
+.loader:after {
+  content: '';
+  width: 70px;
+  height: 80px;
+  background-color: #fff;
+  background-image: linear-gradient(to bottom, #fff 50%, #ff3d00 51%),
+    linear-gradient(to bottom, #bbb 50%, #0000 51%);
+  background-size: 60px 20px, 60px 10px;
+  background-repeat: no-repeat, repeat-y;
+  background-position: center 55px, center 0;
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%) rotate(180deg);
+  box-shadow: 0 10px #fff inset;
+  top: calc(100% - 8px);
+  animation: PrintedPaper 3s ease-in infinite;
+}
+
+@keyframes printerPaper {
+  0%,
+  25% {
+    height: 50px;
+  }
+  75%,
+  100% {
+    height: 0;
+  }
+}
+
+@keyframes PrintedPaper {
+  0%,
+  30% {
+    height: 0px;
+    top: calc(100% - 8px);
+  }
+
+  80% {
+    height: 80px;
+    top: calc(100% - 8px);
+    opacity: 1;
+  }
+  100% {
+    height: 80px;
+    top: calc(100% + 10px);
+    opacity: 0;
+  }
 }
 
 #download-container {
   margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-#download-container #download-pdf {
-  padding: 10px;
+#download-container button {
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 13px;
+  padding: 10px 16px;
   border: none;
-  font-family: Darkmode;
-  font-size: 11px;
-  background-color: coral;
+  border-radius: 6px;
   cursor: pointer;
-  border-radius: 5px;
+  transition: all 0.25s ease-in-out;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* PDF Button Style */
+#download-pdf {
+  background-color: #ff7043;
+  color: white;
+  font-weight: 500;
+}
+
+#download-pdf:hover {
+  background-color: #ff5722;
+}
+
+/* Toggle View Button */
+#toggle-view {
+  background: #f4f4f4;
+  font-size: 16px;
+  color: #333;
+}
+
+#toggle-view:hover {
+  background: #e0e0e0;
+}
+
+
+
+
+
+@media (max-width: 480px) {
+  #image-container1,
+  #image-container2 {
+    width: 99%;
+  }
+  #page1,
+  #page2 {
+    height: 520px;
+    width: 390px;
+    background-color: white;
+    padding: 0px 10px 10px 10px;
+    display: flex;
+    justify-content: center;
+  }
+  #pdf-logo1,
+  #pdf-logo2 {
+    height: 85px;
+    width: 90px;
+    margin-left: 3px;
+    /* margin: 0px auto; */
+    background-color: transparent;
+  }
+
+  #title-select {
+    width: 32px;
+  }
+  * {
+    font-size: 9px;
+  }
+  .font {
+    font-size: 8px;
+  }
+  #name-input {
+    width: 60px;
+    padding: 1px 1px 1px 2px;
+    font-size: 8px;
+  }
+  #area-search-div {
+    position: relative;
+    width: 100px;
+  }
+  #area-search {
+    border: none;
+    outline: none;
+    border: 0.5px solid black;
+    font-family: EnglishRegular;
+    font-weight: 500;
+    width: 100%;
+    padding: 1px 1px 1px 2px;
+    font-size: 8px;
+    border-radius: 2px;
+  }
+  #area-select option {
+    font-size: 9px;
+    margin-bottom: 3px;
+    cursor: pointer;
+  }
+  #plotNo-input,
+  #plotNo1-input {
+    width: 60px;
+    padding: 1px 1px 1px 2px;
+    font-size: 8px;
+  }
+  #project-input,
+  #parties-input,
+  #consultant-input,
+  #contractor-input,
+  #elec-contractor-input {
+    width: 100px;
+    padding: 1px 1px 1px 2px;
+    font-size: 8px;
+  }
+  #ul1 li {
+    font-size: 8px;
+    line-height: 11px;
+  }
+  #ul2 li {
+    font-size: 9px;
+    line-height: 8.5px;
+    margin-top: 1px;
+  }
+  li span {
+    margin-bottom: -1.2px;
+  }
+  #tr1 {
+    font-size: 9px;
+    padding: 2px 10px 2.3px 10px;
+  }
+  #tr1 span {
+    font-size: 9.5px;
+  }
+  #td31,
+  #td32,
+  #td33,
+  #td99,
+  #td34,
+  #td5,
+  #td35,
+  #td36,
+  #td37,
+  #td38 {
+    font-size: 8px;
+    width: 120px;
+    padding: 1px 1px 1px 3px;
+    font-weight: 700;
+  }
+  #td3,
+  #td11,
+  #td12,
+  #td13,
+  #td14,
+  #td15,
+  #td16,
+  #td17,
+  #td18 {
+    width: 125px;
+  }
+
+  .td11 {
+    font-size: 9px;
+    padding: 1px 3px 1px 1px;
+  }
+}
+
+#reminder-popup {
+  position: fixed;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000000;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  font-family: Nunito;
+  font-size: 14px;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: top 0.5s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+#reminder-popup button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+
+.footer {
+  text-align: center;
+  font-size: 14px;
+  padding: 20px;
+  color: #ffffff;
+  background: #000000;
+  font-family: Nunito, sans-serif;
+  letter-spacing: 0.1px;
+}
+
+.footer a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14.5px;
+  letter-spacing: 0.1px;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+  text-underline-offset: 5px; /* Increase the gap */
+}
+
+.heart {
+  color: #e90606;
+  animation: heartbeat 0.35s infinite alternate;
+  display: inline-block;
+  margin: 0 4px;
+  transform-origin: center;
+}
+
+@-webkit-keyframes heartbeat {
+  to {
+    transform: scale(1.1);
+  }
+}
+@keyframes heartbeat {
+  to {
+    transform: scale(1.1);
+  }
 }
