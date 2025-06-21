@@ -548,7 +548,7 @@ function showWarningPopup(message) {
 function showReminderPopup() {
   const popup = document.getElementById('reminder-popup');
   const sound = document.getElementById('reminder-sound');
-  if (sound) sound.volume = 0.8, sound.play();  // Gentle volume
+  // if (sound) sound.volume = 0.8, sound.play();  // Gentle volume
 
   // Slide in
   popup.style.top = '50px';
