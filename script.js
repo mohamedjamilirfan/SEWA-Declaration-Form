@@ -34,7 +34,7 @@ document
 
     try {
       // Simulate async task like PDF creation (e.g., 1.5 sec delay)
-      await new Promise((resolve) => setTimeout(resolve, 5000)); //6100
+      await new Promise((resolve) => setTimeout(resolve, 10)); //6100
 
       // Your existing PDF logic here...
       // e.g., generatePDF(); or jsPDF code
@@ -368,7 +368,12 @@ document
       const canvas1 = await html2canvas(page1, {
         scale: 6,
         useCORS: true, // Handle cross-origin images
+        allowTaint: false,
         dir: 'rtl', // Support RTL
+        logging: true,
+        onclone: (clonedDoc) => {
+          console.log('Cloned document for canvas:', clonedDoc);
+        },
       });
       const imgData1 = canvas1.toDataURL('image/jpeg', 4.0);
       const pageWidth = pdf.internal.pageSize.getWidth();
@@ -380,6 +385,11 @@ document
       const canvas2 = await html2canvas(page2, {
         scale: 6,
         useCORS: true,
+        allowTaint: false,
+        logging: true,
+        onclone: (clonedDoc) => {
+          console.log('Cloned document for canvas:', clonedDoc);
+        },
       });
       const imgData2 = canvas2.toDataURL('image/jpeg', 4.0);
       pdf.addImage(imgData2, 'JPEG', 0, 0, pageWidth, pageHeight);
@@ -406,18 +416,18 @@ document
     showSuccessPopup();
   });
 
-document.getElementById('toggle-view').addEventListener('click', function () {
-  const main = document.getElementById('main21');
-  const icon = document.getElementById('view-icon');
+// document.getElementById('toggle-view').addEventListener('click', function () {
+//   const main = document.getElementById('main21');
+//   const icon = document.getElementById('view-icon');
 
-  if (main.style.flexDirection === 'column') {
-    main.style.flexDirection = 'row';
-    icon.textContent = '📄 Vertical'; // List view
-  } else {
-    main.style.flexDirection = 'column';
-    icon.textContent = '📑 Horizontal'; // Row/grid view
-  }
-});
+//   if (main.style.flexDirection === 'column') {
+//     main.style.flexDirection = 'row';
+//     icon.textContent = '📄 Vertical'; // List view
+//   } else {
+//     main.style.flexDirection = 'column';
+//     icon.textContent = '📑 Horizontal'; // Row/grid view
+//   }
+// });
 
 function showSuccessPopup() {
   const popup = document.createElement('div');
@@ -545,19 +555,19 @@ function showWarningPopup(message) {
   }, 5000);
 }
 
-function showReminderPopup() {
-  const popup = document.getElementById('reminder-popup');
-  const sound = document.getElementById('reminder-sound');
-  // if (sound) sound.volume = 0.8, sound.play();  // Gentle volume
+// function showReminderPopup() {
+//   const popup = document.getElementById('reminder-popup');
+//   const sound = document.getElementById('reminder-sound');
+//   // if (sound) sound.volume = 0.8, sound.play();  // Gentle volume
 
-  // Slide in
-  popup.style.top = '50px';
+//   // Slide in
+//   popup.style.top = '50px';
 
-  // Auto-hide after 3 seconds
-  setTimeout(() => {
-    popup.style.top = '-100px';
-  }, 5000);
-}
+//   // Auto-hide after 3 seconds
+//   setTimeout(() => {
+//     popup.style.top = '-100px';
+//   }, 5000);
+// }
 
 // Close button logic
 document.getElementById('reminder-close').addEventListener('click', () => {
@@ -570,7 +580,6 @@ setTimeout(showReminderPopup, 5000); // first reminder after 10s
 
 // Repeat every 20 minutes (1,200,000 ms)
 setInterval(showReminderPopup, 600000);
-
 
 document.addEventListener('keydown', function (event) {
   // Ctrl + Shift + D
