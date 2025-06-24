@@ -569,17 +569,17 @@ function showWarningPopup(message) {
 //   }, 5000);
 // }
 
-// Close button logic
-document.getElementById('reminder-close').addEventListener('click', () => {
-  const popup = document.getElementById('reminder-popup');
-  popup.style.top = '-100px';
-});
+// // Close button logic
+// document.getElementById('reminder-close').addEventListener('click', () => {
+//   const popup = document.getElementById('reminder-popup');
+//   popup.style.top = '-100px';
+// });
 
-// Initial delay (optional)
-setTimeout(showReminderPopup, 5000); // first reminder after 10s
+// // Initial delay (optional)
+// setTimeout(showReminderPopup, 5000); // first reminder after 10s
 
-// Repeat every 20 minutes (1,200,000 ms)
-setInterval(showReminderPopup, 600000);
+// // Repeat every 20 minutes (1,200,000 ms)
+// setInterval(showReminderPopup, 600000);
 
 document.addEventListener('keydown', function (event) {
   // Ctrl + Shift + D
