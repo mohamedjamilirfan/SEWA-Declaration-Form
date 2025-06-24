@@ -115,14 +115,11 @@ document
       const adjustedFontSize = window.getComputedStyle(projectInput).fontSize;
       td46.textContent = projectInput.value; // Set the value in the table cell
       td46.style.fontSize = adjustedFontSize; // Apply the adjusted font size
-      // td46.style.width = '346px';
-      // td46.style.wordWrap = 'break-word';
       td46.style.position = 'center'; // Center-align text
       td46.style.width = '312px'; // Set fixed width
       td46.style.wordBreak = 'break-word'; // Enable text wrapping
       td46.style.overflow = 'hidden'; // Hide overflowing text
-      td46.style.padding = '2px 3px 0.5px 7px';
-      // tdElement.style.fontSize = '11px';
+      td46.style.padding = '0px 3px 0.5px 7px';
 
       td15.style.width = '107px'; // Set fixed width
       td15.style.padding = '26px 5px 3px 26.5px';
@@ -145,9 +142,7 @@ document
       sign2.style.display = 'flex';
       sign2.style.top = '478.5px';
 
-      // const adjustedFontSize1 = window.getComputedStyle(partiesInput).fontSize;
       td50.textContent = partiesInput.value; // Set the value in the table cell
-      // td50.style.fontSize = adjustedFontSize1; // Apply the adjusted font size
       td50.style.width = '346px';
 
       const adjustedFontSize2 =
@@ -215,7 +210,6 @@ document
         'td2',
         'td44',
         'td45',
-        // 'td46',
         'td47',
         'td4',
         'td50',
@@ -244,8 +238,6 @@ document
         'td12',
         'td13',
         'td14',
-        // 'td15',
-        // 'td16',
         'td17',
         'td18',
         'td79',
@@ -286,8 +278,6 @@ document
         }
       });
 
-      // const span132 = document.getElementById('span132');
-
       // Dynamically import jsPDF
       const { jsPDF } = window.jspdf;
 
@@ -302,15 +292,12 @@ document
                                  inset -3.5px 0 0 black,      /* right  */
                                  inset 0 0px 0 black,         /* bottom */
                                  inset 3.8px 0 0 black      /* left   */`;
-        // element.style.borderLeft = '0.1px solid black';
       });
 
       // Apply top and right borders only to all <th> elements
       document.querySelectorAll('th').forEach((th) => {
         th.style.border = 'none'; // Clear existing borders
         th.style.boxShadow = 'inset 0 -3px 0 black'; /* bottom */
-        // th.style.borderTop = '0.1px solid black';
-        // th.style.borderRight = '0.1px solid black'; // Add right border
       });
 
       // Apply top and right borders only to all <td> elements
@@ -415,19 +402,6 @@ document
     await new Promise((resolve) => setTimeout(resolve, 15000)); // Extra delay before popup
     showSuccessPopup();
   });
-
-// document.getElementById('toggle-view').addEventListener('click', function () {
-//   const main = document.getElementById('main21');
-//   const icon = document.getElementById('view-icon');
-
-//   if (main.style.flexDirection === 'column') {
-//     main.style.flexDirection = 'row';
-//     icon.textContent = '📄 Vertical'; // List view
-//   } else {
-//     main.style.flexDirection = 'column';
-//     icon.textContent = '📑 Horizontal'; // Row/grid view
-//   }
-// });
 
 function showSuccessPopup() {
   const popup = document.createElement('div');
@@ -554,32 +528,6 @@ function showWarningPopup(message) {
     }
   }, 5000);
 }
-
-// function showReminderPopup() {
-//   const popup = document.getElementById('reminder-popup');
-//   const sound = document.getElementById('reminder-sound');
-//   // if (sound) sound.volume = 0.8, sound.play();  // Gentle volume
-
-//   // Slide in
-//   popup.style.top = '50px';
-
-//   // Auto-hide after 3 seconds
-//   setTimeout(() => {
-//     popup.style.top = '-100px';
-//   }, 5000);
-// }
-
-// // Close button logic
-// document.getElementById('reminder-close').addEventListener('click', () => {
-//   const popup = document.getElementById('reminder-popup');
-//   popup.style.top = '-100px';
-// });
-
-// // Initial delay (optional)
-// setTimeout(showReminderPopup, 5000); // first reminder after 10s
-
-// // Repeat every 20 minutes (1,200,000 ms)
-// setInterval(showReminderPopup, 600000);
 
 document.addEventListener('keydown', function (event) {
   // Ctrl + Shift + D
